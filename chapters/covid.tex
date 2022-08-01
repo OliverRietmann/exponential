@@ -1,0 +1,41 @@
+\section*{Exponential Growth}
+We have already encountered \textit{linear} and \textit{quadratic} growth, see Figure~\ref{fig:linear_quadratic_growth}.
+%\begin{example}[linear growth]  \label{ex:linear_growth}
+%	Suppose we want to buy a bunch of apples and the price of a singe apple in Swiss francs is $a>0$.
+%	Buying $x\in\mathbb N$ apples will cost us $a\cdot x$ Swiss francs.
+%	Thus, the function $f\left(x\right)=a\cdot x$ associates to a number $x$ the price of buying $x$ apples.
+%	We say that the price grows \textit{linearly} with the number of apples we are buying.
+%	This is an example of \textit{linear growth}, see Figure~\ref{fig:linear_quadratic_growth}.
+%\end{example}
+%\begin{example}[quadratic growth] \label{ex:quadratic_growth}
+%	Consider a rectangle where the first edge has length $x>0$ and the second edge as length $a\cdot x$ for some $a>0$.
+%	The area of the rectangle is then given by $a\cdot x^2$.
+%	Thus, the function $f\left(x\right)=x^2$ associates to the length $x$ of the first edge the area of the corresponding rectangle.
+%	We say, that the area grows \textit{quadratically} with the edge length.
+%	This is an example of \textit{quadratic growth}, see Figure~\ref{fig:linear_quadratic_growth}.
+%\end{example}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.45\textwidth]{images/linear_growth}\hfill
+	\includegraphics[width=0.45\textwidth]{images/quadratic_growth}
+	\caption{An example of linear growth (left) and quadratic growth (right).}
+	%Left: linear growth in Example~\ref{ex:linear_growth} for $a=\frac{1}{2}$. Right: quadratic growth in Example~\ref{ex:quadratic_growth} for $a=\frac{1}{4}$.
+	\label{fig:linear_quadratic_growth}
+\end{figure}
+But what exactly characterizes linear and quadratic growth?
+\begin{tcolorbox}
+	Let $f\left(x\right)$ be a function.
+	\begin{itemize}
+		\item We say that $f$ grows \textit{linearly}, if $f\left(ax\right)=af\left(x\right)$ for all $a\in\mathbb R$.
+		\item We say that $f$ grows \textit{quadratically}, if $f\left(ax\right)=a^2f\left(x\right)$ for all $a\in\mathbb R$.
+	\end{itemize}
+\end{tcolorbox}
+Figure~\ref{fig:casesCH} shows the number of infections in Switzerland per day from September to November 2020.
+As we are going to see, this is already an example of \textit{exponential growth}.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/casesCH}
+	\caption{The covid infections in autumn 2020 were growing approximately exponentially.}
+	\label{fig:casesCH}
+\end{figure}
+Looking at the figure, we see that from day 12 to day 36, the number of infections is doubling every 6 days.
