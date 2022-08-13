@@ -1,0 +1,59 @@
+\section*{Exponential Growth}
+Before we look at exponential growth, let us recall the familiar concept of \textit{linear growth}.
+\begin{example}[linear growth] \label{ex:linear_growth}
+	Suppose we have a bank account with 50 CHF at the beginning of year zero.
+	At the end of every year, we deposit 20 CHF.
+	How much money are we going to have at the beginning of year $x$?
+	The answer clearly is $20x+50$ CHF.
+	This is visulaized in Figure~\ref{ex:linear_growth} (left).
+	Also, we can fill the amount of money at the beginning of each year into a table.
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|} \hline
+			year & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+			CHF & 50 & 70 & 90 & 110 & 130 & 150 & 170 & 190 & 210 \\ \hline
+		\end{tabular}
+		\label{tab:linear_growth}
+	\end{table}
+\end{example}
+\begin{exercise}
+	Suppose we have again a bank account with 50 CHF at the beginning of year zero.
+	But now, we will not deposit any additional money.
+	Instead, the bank pays us an intrest of 20\% at the end of each year.
+	So if we have 100 CHF on our bank account during a certain year, then the bank will pay us 20 CHF (i.e. 20\%) at the end of that year.
+	\begin{tasks}
+		\task How much money are we going to have at the beginning of year $x$? Fill the following table analogusly to the one in Example~\ref{ex:linear_growth}.
+		\task Find a function $f\left(x\right)$ that returns the amount of money at the end of year $x$.
+		\task Draw the graph of the function $f\left(x\right)$ and compare it to the one in Example~\ref{ex:linear_growth}.
+	\end{tasks}
+\end{exercise}
+\begin{solution*}
+	At the end of year zero, we have 50 CHF on our bank account.
+	Consequently, at the beginning of year one, we will have $60=50\cdot 1.2$ CHF.
+	At the end of year two, we have $72=60\cdot 1.2$ CHF.
+	This can also bewritten as $72=50\cdot 1.2^2$ CHF.
+	Following this scheme, we arrive at the solution given below.
+	\begin{tasks}
+		\task The table is given by\\[8pt]
+		\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|} \hline
+			year & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+			CHF & 50 & 60 & 72 & 86.4 & 103.68 & 124.416 & 149.2992 & 179.15904 & 214.990848 \\ \hline
+		\end{tabular}
+		\task The function is given by $f\left(x\right)=50\cdot 1.2^x$ CHF.
+		\task The graph of $f\left(x\right)$ is given in Figure~\ref{fig:linear_exponential_growth} (right).
+	\end{tasks}
+\end{solution*}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.45\textwidth]{images/linear_growth}\hfill
+	\includegraphics[width=0.45\textwidth]{images/quadratic_growth}
+	\caption{An example of linear growth (left) and exponential growth (right).}
+	\label{fig:linear_exponential_growth}
+\end{figure}
+%\begin{tcolorbox}
+%	We say that a function $f\left(x\right)$ grows linearly
+%	\begin{enumerate}[Step 1:]
+%		\item Express both sides as powers with the same base.
+%		\item Compare the exponents.
+%	\end{enumerate}
+%\end{tcolorbox}
