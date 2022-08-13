@@ -8,8 +8,12 @@
 \usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{enumerate}
+%\usepackage[printsolution=true]{exercises}
 \usepackage{tasks}
 \usepackage{tcolorbox}
+
+\newcommand{\hide}{0}
+\newcommand{\hideif}[1]{\if\hide1\phantom{#1}\else {#1}\fi}
 
 \pagenumbering{gobble}
 \setlength{\parindent}{0pt}
@@ -27,6 +31,7 @@
 \newtheorem*{solution*}{Solution}
 
 \begin{document}
+	\input{chapters/introduction}
 	\input{chapters/covid}
 	\input{chapters/exponential_equations}
 \end{document}
