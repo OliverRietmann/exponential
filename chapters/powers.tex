@@ -1,0 +1,97 @@
+\section*{Laws of Exponents}
+In this section, we are going to develop rules for computations involving powers.
+These will enable us to handle exponential equations more efficiently.
+\begin{tcolorbox}
+	We consider the expression $a^n$. Then
+	\begin{itemize}
+		\item $a>0$ is called \textit{base} and
+		\item $n\in\mathbb Z$ is called \textit{exponent}.
+	\end{itemize}
+\end{tcolorbox}
+In the following, we restrict our attention to exponents $m,n\in\mathbb N$.
+We know that
+\begin{equation*}
+	a^m=\underbrace{a\cdot a\cdot\ldots\cdot a}_{m\text{--times}}
+	\qquad\text{and}\qquad
+	a^n=\underbrace{a\cdot a\cdot\ldots\cdot a}_{n\text{--times}}.
+\end{equation*}
+Moreover, we have
+\begin{equation*}
+	a^m\cdot a^n
+	=\overbrace{\underbrace{a\cdot a\cdot\ldots\cdot a}_{m\text{--times}}
+	\cdot\underbrace{a\cdot a\cdot\ldots\cdot a}_{n\text{--times}}}^{(m+n)\text{--times}}
+	=a^{m+n}.
+\end{equation*}
+We have thus found the following rule.
+\begin{tcolorbox}
+	The product of powers of the same base is the power with summed exponents
+	\begin{equation*}
+		a^m\cdot a^n=a^{m+n},
+	\end{equation*}
+	where $a>0$ and $m,n\in\mathbb N$.
+\end{tcolorbox}
+Rules of computation that involve powers are refered to as \textit{laws of exponents}.
+Can we find other laws of exponents? Can we generalize the notation $a^n$ to exponents $n\notin\mathbb N$ in a consistent way?
+The famous Swiss mathematician Leonhard Euler was asking the same questions in his famous book ``Vollständige Anleitung zur Algebra'' from 1770, see Table~\ref{tab:euler_powers}.
+%		\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|} \hline
+	%			year & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+	%			CHF & 50 & 60 & 72 & 86.4 & 103.68 & 124.416 & 149.2992 & 179.15904 & 214.990848 \\ \hline
+	%		\end{tabular}
+\begin{table}[ht]
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+		$\frac{1}{aaaaaa}$ & $\frac{1}{aaaaa}$ & $\frac{1}{aaaa}$ & $\frac{1}{aaa}$ & $\frac{1}{aa}$ & $\frac{1}{a}$ & 1 & $a$ & $aa$ & $aaa$ \\ \hline
+		$\frac{1}{a^6}$ & $\frac{1}{a^5}$ & $\frac{1}{a^4}$ & $\frac{1}{a^3}$ & $\frac{1}{a^2}$ & $\frac{1}{a}$ & & & & \\ \hline
+		$a^{-6}$ & $a^{-5}$ & $a^{-4}$ & $a^{-3}$ & $a^{-2}$ & $a^{-1}$ & $a^0$ & $a^1$ & $a^2$ & $a^3$ \\ \hline
+	\end{tabular}
+	\caption{Notation proposed by Leonhard Euler, ``Vollständige Anleitung zur Algebra'', Page~66, from 1770.}
+	\label{tab:euler_powers}
+\end{table}
+\begin{exercise}
+	Leonhard Euler proposes a genererlization of the notation $a^n$ in Table~\ref{tab:euler_powers}.
+	\begin{tasks}
+		\task How does he define $a^0$ and why does this definition make sense?
+		\task How does he define $a^{-n}$ for $n\in\mathbb N$ and why does this definition make sense?
+	\end{tasks}
+\end{exercise}
+\begin{solution*}
+	The idea is that removing a power of $a$ means division by $a$.
+	For example going from $a^3$ to $a^2$ means a division by $a$.
+	\begin{tasks}
+		\task Euler extends this principle ``backwards'' to the exponent zero, which yields $a^0=1$.
+		\task Extending it even to negative exponents by defining $a^{-n}=\frac{1}{a^n}$, we remain consistent with the law of exponents found before.
+		More precisely, we have $a^m\cdot a^n=a^{m+n}$ for all $m,n\in\mathbb Z$ (and not only $m,n\in\mathbb N$).
+	\end{tasks}
+\end{solution*}
+It follows as a special case of our considerations that
+\begin{equation*}
+	\left(a^n\right)^2=a^n\cdot a^n=a^{n+n}=a^{2n}.
+\end{equation*}
+In fact, the same argument remains valid if we replace 2 by a general integer $m\in\mathbb N$ since
+\begin{equation*}
+	\left(a^n\right)^m=\underbrace{a^n\cdot\ldots\cdot a^n}_{m\text{--times}}=a^{\overbrace{n+\cdots +n}^{\smash{m\text{--times}}}}=a^{m\cdot n}.
+\end{equation*}
+This yields the following law of exponents.
+\begin{tcolorbox}
+	Let $a>0$ and $m,n\in\mathbb N$, then
+	\begin{equation*}
+		\left(a^n\right)^m=a^{m\cdot n}.
+	\end{equation*}
+\end{tcolorbox}
+\begin{exercise}
+	This law remains true for all $m,n\in\mathbb Z$.
+	Explain why.
+	\textit{Hint: Use that $a^{-n}=\frac{1}{a^n}$.}
+\end{exercise}
+%\begin{solution*}
+%	Suppose that $m,n\in\mathbb N$. Then
+%	\begin{equation*}
+%		\left(a^{-n}\right)^{-m}
+%		=\underbrace{\frac{1}{a^n}\cdot\ldots\cdot\frac{1}{a^n}}_{m\text{--times}}
+%		=\underbrace{\frac{1}{a^n\cdots a^n}}_{m\text{--times}}
+%		=\frac{1}{a^{m\cdot n}}
+%		=a^{-n}
+%	\end{equation*}
+%\end{solution*}
+\textcolor{red}{TODO: $\left(a\cdot b\right)^n=a^n\cdot b^m$, exercises}

@@ -1,5 +1,5 @@
-\section*{Exponential Growth}
-Before we look at exponential growth, let us recall the familiar concept of \textit{linear growth}.
+\section*{Introduction: Exponential Growth}
+%Before we look at exponential growth, let us recall the familiar concept of \textit{linear growth}.
 \begin{example}[linear growth] \label{ex:linear_growth}
 	Suppose we have a bank account with 50 CHF at the beginning of year zero.
 	At the end of every year, we deposit 20 CHF.
@@ -7,22 +7,42 @@ Before we look at exponential growth, let us recall the familiar concept of \tex
 	The answer clearly is $20x+50$ CHF.
 	This is visulaized in Figure~\ref{ex:linear_growth} (left).
 	Also, we can fill the amount of money at the beginning of each year into a table.
-	\begin{table}[ht]
-		\centering
-		\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|} \hline
-			year & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
-			CHF & 50 & 70 & 90 & 110 & 130 & 150 & 170 & 190 & 210 \\ \hline
-		\end{tabular}
-		\label{tab:linear_growth}
-	\end{table}
+%	\begin{table}[ht]
+%		\centering
+%		\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|} \hline
+%			year & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+%			CHF & 50 & 70 & 90 & 110 & 130 & 150 & 170 & 190 & 210 \\ \hline
+%		\end{tabular}
+%		\label{tab:linear_growth}
+%	\end{table}
+	\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}
+		\matrix[matrix of math nodes,draw, column sep=1em,row sep=.5mm] (mx) {
+			\textrm{year} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+			\textrm{CHF} & 50 & 70 & 90 & 110 & 130 & 150 & 170 & 190 & 210 \\
+		};
+		\path[->,shorten >=2pt]
+		\foreach \from/\to in {2/3,3/4,4/5,5/6,6/7,7/8,8/9,9/10} {
+			([yshift=2mm]mx-1-\from.north) edge[bend left]
+			node[above] {$\scriptstyle+1$} ([yshift=2mm]mx-1-\to.north)
+			([yshift=-2.5mm]mx-2-\from.south) edge[bend right]
+			node[below] {$\scriptstyle+20$} ([yshift=-2.5mm]mx-2-\to.south)
+		};
+		\foreach \x in {2,...,10}{
+			\draw ([xshift=-1em]mx.north west -| mx-1-\x.west) -- ([xshift=-1em]mx.south west -| mx-1-\x.west);
+		};
+		\draw (mx.west) -- (mx.east);
+	\end{tikzpicture}
+	\end{figure}
 \end{example}
-\begin{exercise}
+\begin{exercise} \label{ex:exponential_growth}
 	Suppose we have again a bank account with 50 CHF at the beginning of year zero.
 	But now, we will not deposit any additional money.
 	Instead, the bank pays us an intrest of 20\% at the end of each year.
 	So if we have 100 CHF on our bank account during a certain year, then the bank will pay us 20 CHF (i.e. 20\%) at the end of that year.
 	\begin{tasks}
-		\task How much money are we going to have at the beginning of year $x$? Fill the following table analogusly to the one in Example~\ref{ex:linear_growth}.
+		\task How much money are we going to have at the beginning of year $x$? Create end fill a table analogusly to the one in Example~\ref{ex:linear_growth}.
 		\task Find a function $f\left(x\right)$ that returns the amount of money at the end of year $x$.
 		\task Draw the graph of the function $f\left(x\right)$ and compare it to the one in Example~\ref{ex:linear_growth}.
 	\end{tasks}
@@ -33,15 +53,35 @@ Before we look at exponential growth, let us recall the familiar concept of \tex
 	At the end of year two, we have $72=60\cdot 1.2$ CHF.
 	This can also bewritten as $72=50\cdot 1.2^2$ CHF.
 	Following this scheme, we arrive at the solution given below.
-	\begin{tasks}
-		\task The table is given by\\[8pt]
-		\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|} \hline
-			year & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
-			CHF & 50 & 60 & 72 & 86.4 & 103.68 & 124.416 & 149.2992 & 179.15904 & 214.990848 \\ \hline
-		\end{tabular}
-		\task The function is given by $f\left(x\right)=50\cdot 1.2^x$ CHF.
-		\task The graph of $f\left(x\right)$ is given in Figure~\ref{fig:linear_exponential_growth} (right).
-	\end{tasks}
+	\begin{enumerate}[a)]
+		\item The table is given by
+%		\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|} \hline
+%			year & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+%			CHF & 50 & 60 & 72 & 86.4 & 103.68 & 124.416 & 149.2992 & 179.15904 & 214.990848 \\ \hline
+%		\end{tabular}\\
+		\begin{figure}[ht]
+			\centering
+			\begin{tikzpicture}
+				\matrix[matrix of math nodes,draw, column sep=1em,row sep=.5mm] (mx) {
+					\textrm{year} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+					\textrm{CHF} & 50 & 60 & 72 & 86.4 & 103.68 & 124.416 & 149.2992 & 179.15904 & 214.990848 \\
+				};
+				\path[->,shorten >=1pt]
+				\foreach \from/\to in {2/3,3/4,4/5,5/6,6/7,7/8,8/9,9/10} {
+					([yshift=2mm]mx-1-\from.north) edge[bend left]
+					node[above] {$\scriptstyle+1$} ([yshift=2mm]mx-1-\to.north)
+					([yshift=-2.5mm]mx-2-\from.south) edge[bend right]
+					node[below] {$\scriptstyle\cdot 1.2$} ([yshift=-2.5mm]mx-2-\to.south)
+				};
+				\foreach \x in {2,...,10}{
+					\draw ([xshift=-\x-15]mx.north west -| mx-1-\x.west) -- ([xshift=-\x-15]mx.south west -| mx-1-\x.west);
+				};
+				\draw (mx.west) -- (mx.east);
+			\end{tikzpicture}
+		\end{figure}
+		\item The function is given by $f\left(x\right)=50\cdot 1.2^x$ CHF.
+		\item The graph of $f\left(x\right)$ is given in Figure~\ref{fig:linear_exponential_growth} (right).
+	\end{enumerate}
 \end{solution*}
 \begin{figure}[ht]
 	\centering
@@ -50,10 +90,27 @@ Before we look at exponential growth, let us recall the familiar concept of \tex
 	\caption{An example of linear growth (left) and exponential growth (right).}
 	\label{fig:linear_exponential_growth}
 \end{figure}
-%\begin{tcolorbox}
-%	We say that a function $f\left(x\right)$ grows linearly
-%	\begin{enumerate}[Step 1:]
-%		\item Express both sides as powers with the same base.
-%		\item Compare the exponents.
-%	\end{enumerate}
-%\end{tcolorbox}
+\begin{tcolorbox}
+	We say that a function $f\left(x\right)$ grows exponentially if
+	\begin{equation*}
+		f\left(x\right)=a\cdot b^x
+	\end{equation*}
+	for some $a\neq 0$ and $b>1$.
+\end{tcolorbox}
+\begin{example}
+	The function in Exercise~\ref{ex:exponential_growth} grows \textit{exponentially} with $a=50$ CHF and $b=1.2$.
+\end{example}
+\begin{exercise} \label{ex:first_exponential_equation}
+	This time, we have only 20 CHF on our bank account at year zero.
+	The bank still pays in intrest of 20\% at the end of each year.
+	How many years will it take until we have more than 500 CHF on our bank account?
+\end{exercise}
+\begin{solution*}
+	At the beginning of year $x$, we have $f\left(x\right)=80\cdot 1.2^x$ CHF on our bank account.
+	We have $f\left(10\right)=495.34$ CHF and $f\left(11\right)=594.41$ CHF (both rounded to two digits).
+	Hence it takes 11 years.
+\end{solution*}
+\textcolor{red}{TODO: Table comparing linear and exponential growth.}
+
+In Exercise~\ref{ex:first_exponential_equation}, we have solved our first \textit{exponential equation}, i.e. an equation where the unknown $x$ occurs in the exponent.
+In the next chapter, we develop a more sytematic approach to solve exponential equations.
