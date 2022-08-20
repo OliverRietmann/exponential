@@ -11,9 +11,12 @@
 %\usepackage[printsolution=true]{exercises}
 \usepackage{tasks}
 \usepackage{tcolorbox}
+\usepackage{multicol}
 
 \usepackage{tikz}
 \usetikzlibrary{matrix}
+
+\setlength{\columnseprule}{1pt}
 
 
 \newcommand{\hide}{0}
@@ -35,9 +38,9 @@
 \newtheorem*{solution*}{Solution}
 
 \begin{document}
-	\input{chapters/introduction}
-	\input{chapters/powers}
-	\input{chapters/decay}
+	\input{chapters/introduction}\newpage
+	\input{chapters/powers}\newpage
+	\input{chapters/decay}\newpage
 	\input{chapters/rational_exponents}
 	\input{chapters/exponential_equations}
 	\input{chapters/exponential_function}
