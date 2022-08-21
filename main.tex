@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper,oneside]{article}
 \usepackage[a4paper,total={160mm,250mm}]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -11,13 +11,16 @@
 %\usepackage[printsolution=true]{exercises}
 \usepackage{tasks}
 \usepackage{tcolorbox}
+\usepackage{marginnote}
 \usepackage{multicol}
+\usepackage{mhchem}
 
 \usepackage{tikz}
 \usetikzlibrary{matrix}
 
-\setlength{\columnseprule}{1pt}
+\newcommand{\annotation}[1]{\reversemarginpar\marginpar{\small\itshape\color{blue}{#1}}}
 
+\setlength{\columnseprule}{1pt}
 
 \newcommand{\hide}{0}
 \newcommand{\hideif}[1]{\if\hide1\phantom{#1}\else {#1}\fi}
