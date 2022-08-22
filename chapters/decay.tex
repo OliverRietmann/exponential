@@ -9,7 +9,7 @@ This phenomenon is called ``radioactive decay''.
 An important example is the carbon atom, or more precisely, the \ce{^{14}C} isotope of carbon.
 It is know to have a \textbf{half-live} of 5730 years, that is
 \begin{center}
-	every \ce{^{14}C} atom has a probability of 50\% to decay with the next 5730 years.
+	a \ce{^{14}C} atom has a probability of 50\% to decay with the next 5730 years.
 \end{center}
 Put differently, for any given an amount $a$ of \ce{^{14}C} atoms, we expect that after 5730 years, half of them will have decayed, so that we are left with $\frac{a}{2}$ atoms.
 After another 5730 years we will be left with half of $\frac{a}{2}$, i.e. with $\frac{a}{4}$.
@@ -34,10 +34,36 @@ We arrive at the following table.
 		\draw (mx.west) -- (mx.east);
 	\end{tikzpicture}
 \end{figure}
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.49\textwidth]{images/decay}\hfill
-	\includegraphics[width=0.49\textwidth]{images/c14_lifecycle}
-	\caption{Decay of \ce{^{14}C} with $a=1024$ atoms (left) and the \ce{^{14}C} lifecycle (right).}
-	\label{fig:c14}
-\end{figure}
+\begin{example}
+	Suppose that at time zero we have $a\in\mathbb N$ atoms of the \ce{^{14}C} isotope.
+	We want to find a function $f\left(x\right)$ that, for a given number of years $x$, returns the expected number of \ce{^{14}C} atoms after $x$ years.
+	Put differently, the function $f\left(x\right)$ should yield exactly the values in the table above (where $x$ si the first row and $f\left(x\right)$ is the second row), this means
+	\begin{equation*}
+		f\left(0\right)=a,\quad
+		f\left(5730\right)=\frac{a}{2},\quad
+		f\left(5730\cdot 2\right)=\frac{a}{2^2},\quad\ldots,\quad
+		f\left(5730\cdot n\right)=\frac{a}{2^n}.
+	\end{equation*}
+	\begin{minipage}{0.48\textwidth}
+		These conditions are satisfied by
+		\begin{equation*}
+			f\left(x\right)=a\cdot\left(\frac{1}{2}\right)^{\tfrac{x}{5730}},
+		\end{equation*}
+		because
+		\begin{equation*}
+			f\left(5730\cdot n\right)=a\cdot\left(\frac{1}{2}\right)^{\tfrac{5730\cdot n}{5730}}
+			=a\cdot\left(\frac{1}{2}\right)^n
+			=\frac{a}{2^n}.
+		\end{equation*}
+		Finally, this can be re-written as
+		\begin{equation*}
+			f\left(x\right)=a\cdot 2^{-x/5730}.
+		\end{equation*}
+		The graph of $f$ is shown on the left.
+	\end{minipage}\hfill
+	\begin{minipage}{0.48\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{images/decay}\hfill
+			Decay of \ce{^{14}C} with $a=1024$ atoms.
+	\end{minipage}
+\end{example}
