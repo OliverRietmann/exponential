@@ -1,17 +1,6 @@
 \section*{Exponential Decay}
-\textcolor{red}{TODO: Radioactive decay, half life, motivation of rational exponents}
-
-We have already seen an example of exponential growth.
-Now we are going to examine the exponential decay.
-
-Many atoms are unstable in the sense that they can decay into two atoms of with a smaller core.
-This phenomenon is called ``radioactive decay''.
-An important example is the carbon atom, or more precisely, the \ce{^{14}C} isotope of carbon.
-It is know to have a \textbf{half-live} of 5730 years, that is
-\begin{center}
-	a \ce{^{14}C} atom has a probability of 50\% to decay with the next 5730 years.
-\end{center}
-Put differently, for any given an amount $a$ of \ce{^{14}C} atoms, we expect that after 5730 years, half of them will have decayed, so that we are left with $\frac{a}{2}$ atoms.
+The \ce{^{14}C} isotope of carbon has a \textbf{half-live} of 5730 years, that is \textbf{every \ce{^{14}C} atom has a probability of 50\% to decay with the next 5730 years}.
+Put differently, for any given an amount $a$ of \ce{^{14}C} atoms, we expect that after 5730 years, half of them will have decayed, so that we are left with roughly $\frac{a}{2}$ atoms.
 After another 5730 years we will be left with half of $\frac{a}{2}$, i.e. with $\frac{a}{4}$.
 We arrive at the following table.
 \begin{figure}[ht]
@@ -34,36 +23,115 @@ We arrive at the following table.
 		\draw (mx.west) -- (mx.east);
 	\end{tikzpicture}
 \end{figure}
-\begin{example}
-	Suppose that at time zero we have $a\in\mathbb N$ atoms of the \ce{^{14}C} isotope.
-	We want to find a function $f\left(x\right)$ that, for a given number of years $x$, returns the expected number of \ce{^{14}C} atoms after $x$ years.
-	Put differently, the function $f\left(x\right)$ should yield exactly the values in the table above (where $x$ si the first row and $f\left(x\right)$ is the second row), this means
+Suppose that at time zero, we have $a\in\mathbb N$ atoms of the \ce{^{14}C} isotope.
+We want to find a function $f\left(x\right)$ that returns the expected number of \ce{^{14}C} atoms after $x$ years.
+Put differently, the function $f\left(x\right)$ should yield exactly the values in the table above (where $x$ is the first row and $f\left(x\right)$ is the second row), this means
+\begin{equation*}
+	f\left(0\right)=a,\quad
+	f\left(5730\right)=\frac{a}{2},\quad
+	f\left(5730\cdot 2\right)=\frac{a}{2^2},\quad\ldots,\quad
+	f\left(5730\cdot n\right)=\frac{a}{2^n}.
+\end{equation*}
+\begin{minipage}{0.48\textwidth}
+	These conditions are satisfied by
 	\begin{equation*}
-		f\left(0\right)=a,\quad
-		f\left(5730\right)=\frac{a}{2},\quad
-		f\left(5730\cdot 2\right)=\frac{a}{2^2},\quad\ldots,\quad
-		f\left(5730\cdot n\right)=\frac{a}{2^n}.
+		f\left(x\right)=a\left(\frac{1}{2}\right)^{\tfrac{x}{5730}},
 	\end{equation*}
-	\begin{minipage}{0.48\textwidth}
-		These conditions are satisfied by
-		\begin{equation*}
-			f\left(x\right)=a\cdot\left(\frac{1}{2}\right)^{\tfrac{x}{5730}},
-		\end{equation*}
-		because
-		\begin{equation*}
-			f\left(5730\cdot n\right)=a\cdot\left(\frac{1}{2}\right)^{\tfrac{5730\cdot n}{5730}}
-			=a\cdot\left(\frac{1}{2}\right)^n
-			=\frac{a}{2^n}.
-		\end{equation*}
-		Finally, this can be re-written as
-		\begin{equation*}
-			f\left(x\right)=a\cdot 2^{-x/5730}.
-		\end{equation*}
-		The graph of $f$ is shown on the left.
-	\end{minipage}\hfill
-	\begin{minipage}{0.48\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{images/decay}\hfill
-			Decay of \ce{^{14}C} with $a=1024$ atoms.
-	\end{minipage}
-\end{example}
+	because
+	\begin{equation*}
+		f\left(5730\cdot n\right)=a\left(\frac{1}{2}\right)^{\tfrac{5730\cdot n}{5730}}
+		=a\left(\frac{1}{2}\right)^n
+		=\frac{a}{2^n}.
+	\end{equation*}
+	Finally, this can be re-written as
+	\begin{equation*}
+		f\left(x\right)=a\cdot 2^{-x/5730}.
+	\end{equation*}
+	The graph of $f$ is shown on the left.
+\end{minipage}\hfill
+\begin{minipage}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{images/decay}\hfill
+		Decay of \ce{^{14}C} with $a=1024$ atoms.
+\end{minipage}
+	We could also ask, how many \ce{^{14}C} atoms are left after $x=\frac{5730}{2}=2865$ years
+\begin{equation*}
+	f\left(\tfrac{5730}{2}\right)=a\cdot 2^{-\frac{1}{2}}.
+\end{equation*}
+But what is the meaning of $2^{-\frac{1}{2}}$?
+How can we multiply 2 by itself for $-\frac{1}{2}$ times?
+\begin{exercise} \label{ex:c14}
+	Suppose that at time zero we have $a=1024$ atoms of the \ce{^{14}C} isotope.
+	How many years will it take until we expect only $64$ atoms to be left?
+	\textit{Hint:} Note that $1024=2^{10}$ and $64=2^6$.
+\end{exercise}
+\begin{solution*}
+	The number of \ce{^{14}C} atoms after $x$ years is given by
+	\begin{equation*}
+		f\left(x\right)=a\cdot 2^{-x/5730}=2^{10}\cdot 2^{-x/5730}=2^{-x/5730+10}.
+	\end{equation*}
+	We have to solve the equation $64=f\left(x\right)$, that is
+	\begin{equation*}
+		2^6=2^{-x/5730+10}\qquad\text{or}\qquad 6=-\frac{x}{5730}+10
+	\end{equation*}
+	upon comparing the exponents.
+	Solving the second equation, we obtain
+	\begin{equation*}
+		x=4\cdot 5730=22920
+	\end{equation*}
+	years.
+\end{solution*}
+In fact, we have been using our rules of computation for the rational exponent $-\frac{x}{5730}$.
+It turns out, that all the rules for exponents we know work more generally for real exponents.
+\begin{tcolorbox}
+	For exponents $m,n\in\mathbb R$, we have the following rules:
+	\begin{multicols}{3}
+		\centering
+		\textbf{same base}\\
+		\begin{align*}
+			a^m\cdot a^n&=a^{m+n} \\[10pt]
+			\frac{a^m}{a^n}&=a^{m-n} \\[10pt]
+			\left(a^m\right)^n&=a^{m\cdot n}
+		\end{align*}
+		\vfill
+		\columnbreak
+		
+		\textbf{same exponent}\\
+		\begin{align*}
+			\left(a\cdot b\right)^n&=a^n\cdot b^n \\[10pt]
+			\left(\frac{a}{b}\right)^n&=\frac{a^n}{b^n}
+		\end{align*}
+		\vfill
+		\columnbreak
+		
+		\textbf{definitions}\\
+		\begin{align*}
+			a^0&=1 \\[10pt]
+			a^{-n}&=\frac{1}{a^n}
+		\end{align*}
+		\vfill
+	\end{multicols}
+	Whenever negative powers are involved, the base must not be zero.
+\end{tcolorbox}
+This means that we can re-write the function for radioactive decay of \ce{^{14}C}.
+\begin{equation*}
+	f\left(x\right)=a\cdot 2^{-x/5730}=2^{10}\cdot 2^{-x/5730}=2^{-x/5730+10}.
+\end{equation*}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.48\textwidth]{images/exponentials_grow}\hfill
+	\includegraphics[width=0.48\textwidth]{images/exponentials_decay}
+	\caption{Graph of exponentially growing functions with $a=1$.}
+	\label{fig:graphs}
+\end{figure}
+\begin{exercise} \label{ex:graphs}
+	Take a look at Figure~\ref{ex:graphs} and come up with some properties about functions of the form $f\left(x\right)=a\cdot b^x$.
+\end{exercise}
+\begin{solution*}
+	We have $f\left(0\right)=a$, so $a$ is always the value of $f$ at zero.
+	The larger $b$ the faster $f\left(x\right)$ will grow.
+	If $0<b<1$, then $f\left(x\right)$ is even decreasing.
+	Moreover, replacing $b$ by $\frac{1}{b}$ seems to mirror the graph about the $y$--axis.
+\end{solution*}
+\textcolor{red}{TODO: Radioactive decay, half life, motivation of rational exponents}
