@@ -5,7 +5,7 @@
 	At the end of every year, we deposit 20 CHF.
 	How much money are we going to have at the beginning of year $x$?
 	The answer clearly is $20x+50$ CHF.
-	This is visulaized in Figure~\ref{ex:linear_growth} (left).
+	This is visualized in Figure~\ref{ex:linear_growth} (left).
 	Also, we can fill the amount of money at the beginning of each year into a table.
 %	\begin{table}[ht]
 %		\centering
@@ -40,10 +40,10 @@
 \begin{exercise} \label{ex:exponential_growth}
 	Suppose we have again a bank account with 50 CHF at the beginning of year zero.
 	But now, we will not deposit any additional money.
-	Instead, the bank pays us an intrest of 20\% at the end of each year.
+	Instead, the bank pays us an interest of 20\% at the end of each year.
 	So if we have 100 CHF on our bank account during a certain year, then the bank will pay us 20 CHF (i.e. 20\%) at the end of that year.
 	\begin{tasks}
-		\task How much money are we going to have at the beginning of year $x$? Create and fill a table analogusly to the one in Example~\ref{ex:linear_growth}.
+		\task How much money are we going to have at the beginning of year $x$? Create and fill a table analogously to the one in Example~\ref{ex:linear_growth}.
 		\task Find a function $f\left(x\right)$ that returns the amount of money at the end of year $x$.
 		\task Draw the graph of the function $f\left(x\right)$ and compare it to the one in Example~\ref{ex:linear_growth}.
 	\end{tasks}
@@ -104,11 +104,18 @@
 	\end{itemize}
 \end{tcolorbox}
 \begin{example}
-	The function in Exercise~\ref{ex:exponential_growth} grows \textit{exponentially} with $a=50$ CHF and $b=1.2$.
+	The function in Exercise~\ref{ex:exponential_growth} grows exponentially with $a=50$ CHF and $b=1.2$.
 \end{example}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.48\textwidth]{images/exponentalb}
+	\caption{Graph of exponentially growing functions with $a=1$.}
+	\label{fig:differentb}
+\end{figure}
+\annotation{25}
 \begin{exercise} \label{ex:first_exponential_equation}
 	This time, we have only 20 CHF on our bank account at year zero.
-	The bank still pays in intrest of 20\% at the end of each year.
+	The bank still pays in interest of 20\% at the end of each year.
 	How many years will it take until we have more than 500 CHF on our bank account?
 \end{exercise}
 \begin{solution*}
@@ -116,25 +123,48 @@
 	We have $f\left(10\right)=495.34$ CHF and $f\left(11\right)=594.41$ CHF (both rounded to two digits).
 	Hence it takes 11 years.
 \end{solution*}
-\annotation{30}
+\annotation{32}
+We have just solved our first \textbf{exponential equation}, i.e. an equation where $x$ occurs in the exponent.
+To solve these equations, we need the inverse function of $b^x$.
+Such an inverse function is called \textbf{logarithm}.
+\begin{tcolorbox}
+	Many quantities in nature grow or decay exponentially.
+	\begin{itemize}
+		\item Growth of bacteria populations
+		\item Radioactive decay
+		\item Number of infections during Corona
+		\item Human senses %: 
+	\end{itemize}
+\end{tcolorbox}
+\begin{example}
+	Tones that we perceive as rising in equal steps actually grow by a constant factor in terms of frequency.
+	for example rising by an octave means doubling the frequency.
+	See Figure~\ref{fig:octave}.
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.48\textwidth]{images/octave}
+		\caption{Octaves and their associated frequency.}
+		\label{fig:octave}
+	\end{figure}
+\end{example}
+\annotation{37}
 \begin{tcolorbox}
 	Outlook:
 	\begin{itemize}
-		\item In Exercise~\ref{ex:exponential_growth}: Advancing by \textbf{equal steps in time} increases the value of $f$ by a constant \textbf{factor}.
+		\item Exercise~\ref{ex:exponential_growth}: Advancing by \textbf{equal steps in time} increases the value of $f$ by a constant \textbf{factor}.
 		This is true for every exponentially growing function.
-		\item How do we solve for $x$ in the \textbf{exponent} (see Exercise~\ref{ex:first_exponential_equation})?
+		\item Exercise~\ref{ex:first_exponential_equation}: How do we solve for $x$ in the \textbf{exponent}?
 		\item This issue requires a new tool, the so-called \textbf{logarithm}.
 		\item What is $2^{0.5}$?
 	\end{itemize}
 \end{tcolorbox}
-\annotation{32}
-\begin{tcolorbox}
-	Many quantities in nature grow or decay exponentially.
-	\begin{itemize}
-		\item Growth of bactera bacterial populations
-		\item Radioactive decay
-		\item Human senses %: Tones that we perceive as rising in equal steps accutally grow by a constant factor in terms of wavelength (e.g. rising by an octave means dividing the wavelength by two).
-		\item Number of infections during Corona
-	\end{itemize}
-\end{tcolorbox}
-\annotation{35}
+\annotation{40}
+%\begin{example}
+%	Human brightness perception is exponential, meaning that a grayscale pattern that we perceive as ``changing in equal steps'' is actually increasing exponentially in brightness.
+%	\begin{figure}[ht]
+%		\centering
+%		\includegraphics[width=0.48\textwidth]{images/grayscale}
+%		\caption{Graph of exponentially growing functions with $a=1$.}
+%		\label{fig:grayscales}
+%	\end{figure}
+%\end{example}
