@@ -1,4 +1,4 @@
-\section*{Exponential Decay}
+\section{Exponential Decay}
 The \ce{^{14}C} isotope of carbon has a \textbf{half-live} of 5730 years, that is \textbf{every \ce{^{14}C} atom has a probability of 50\% to decay with the next 5730 years}.
 Put differently, for any given an amount $a$ of \ce{^{14}C} atoms, we expect that after 5730 years, half of them will have decayed, so that we are left with roughly $\frac{a}{2}$ atoms.
 After another 5730 years we will be left with half of $\frac{a}{2}$, i.e. with $\frac{a}{4}$.
@@ -23,6 +23,7 @@ We arrive at the following table.
 		\draw (mx.west) -- (mx.east);
 	\end{tikzpicture}
 \end{figure}
+
 Suppose that at time zero, we have $a\in\mathbb N$ atoms of the \ce{^{14}C} isotope.
 We want to find a function $f\left(x\right)$ that returns the expected number of \ce{^{14}C} atoms after $x$ years.
 Put differently, the function $f\left(x\right)$ should yield exactly the values in the table above (where $x$ is the first row and $f\left(x\right)$ is the second row), this means

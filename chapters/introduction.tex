@@ -1,11 +1,11 @@
-\section*{Introduction: Exponential Growth}
+\section{Introduction: Exponential Growth}
 %Before we look at exponential growth, let us recall the familiar concept of \textit{linear growth}.
 \begin{example}[linear growth] \label{ex:linear_growth}
 	Suppose we have a bank account with 50 CHF at the beginning of year zero.
 	At the end of every year, we deposit 20 CHF.
 	How much money are we going to have at the beginning of year $x$?
 	The answer clearly is $20x+50$ CHF.
-	This is visualized in Figure~\ref{ex:linear_growth} (left).
+	This is visualized in Figure~\ref{fig:linear_exponential_growth} (left).
 	Also, we can fill the amount of money at the beginning of each year into a table.
 %	\begin{table}[ht]
 %		\centering
@@ -15,8 +15,7 @@
 %		\end{tabular}
 %		\label{tab:linear_growth}
 %	\end{table}
-	\begin{figure}[ht]
-	\centering
+	\begin{center}
 	\begin{tikzpicture}
 		\matrix[matrix of math nodes,draw, column sep=1em,row sep=.5mm] (mx) {
 			\textrm{year} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
@@ -34,7 +33,7 @@
 		};
 		\draw (mx.west) -- (mx.east);
 	\end{tikzpicture}
-	\end{figure}
+	\end{center}
 \end{example}
 \annotation{5}
 \begin{exercise} \label{ex:exponential_growth}
@@ -60,26 +59,25 @@
 %			year & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
 %			CHF & 50 & 60 & 72 & 86.4 & 103.68 & 124.416 & 149.2992 & 179.15904 & 214.990848 \\ \hline
 %		\end{tabular}\\
-		\begin{figure}[ht]
-			\centering
-			\begin{tikzpicture}
-				\matrix[matrix of math nodes,draw, column sep=1em,row sep=.5mm] (mx) {
-					\textrm{year} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
-					\textrm{CHF} & 50 & 60 & 72 & 86.4 & 103.68 & 124.416 & 149.2992 & 179.15904 & 214.990848 \\
-				};
-				\path[->,shorten >=1pt]
-				\foreach \from/\to in {2/3,3/4,4/5,5/6,6/7,7/8,8/9,9/10} {
-					([yshift=2mm]mx-1-\from.north) edge[bend left]
-					node[above] {$\scriptstyle+1$} ([yshift=2mm]mx-1-\to.north)
-					([yshift=-2.5mm]mx-2-\from.south) edge[bend right]
-					node[below] {$\scriptstyle\cdot 1.2$} ([yshift=-2.5mm]mx-2-\to.south)
-				};
-				\foreach \x in {2,...,10}{
-					\draw ([xshift=-\x-15]mx.north west -| mx-1-\x.west) -- ([xshift=-\x-15]mx.south west -| mx-1-\x.west);
-				};
-				\draw (mx.west) -- (mx.east);
-			\end{tikzpicture}
-		\end{figure}
+		\begin{center}
+		\begin{tikzpicture}
+			\matrix[matrix of math nodes,draw, column sep=1em,row sep=.5mm] (mx) {
+				\textrm{year} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+				\textrm{CHF} & 50 & 60 & 72 & 86.4 & 103.68 & 124.416 & 149.2992 & 179.15904 & 214.990848 \\
+			};
+			\path[->,shorten >=1pt]
+			\foreach \from/\to in {2/3,3/4,4/5,5/6,6/7,7/8,8/9,9/10} {
+				([yshift=2mm]mx-1-\from.north) edge[bend left]
+				node[above] {$\scriptstyle+1$} ([yshift=2mm]mx-1-\to.north)
+				([yshift=-2.5mm]mx-2-\from.south) edge[bend right]
+				node[below] {$\scriptstyle\cdot 1.2$} ([yshift=-2.5mm]mx-2-\to.south)
+			};
+			\foreach \x in {2,...,10}{
+				\draw ([xshift=-\x-15]mx.north west -| mx-1-\x.west) -- ([xshift=-\x-15]mx.south west -| mx-1-\x.west);
+			};
+			\draw (mx.west) -- (mx.east);
+		\end{tikzpicture}
+		\end{center}
 		\item The function is given by $f\left(x\right)=50\cdot 1.2^x$ CHF.
 		\item The graph of $f\left(x\right)$ is given in Figure~\ref{fig:linear_exponential_growth} (right).
 	\end{enumerate}
@@ -95,7 +93,6 @@
 	Note the difference: This time, the function values change by a constant factor!
 \end{tcolorbox}
 \annotation{20}
-\newpage
 \begin{tcolorbox}
 	We say that a function $f\left(x\right)$ grows \ldots
 	\begin{itemize}
@@ -108,7 +105,7 @@
 \end{example}
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.48\textwidth]{images/exponentalb}
+	\includegraphics[width=0.40\textwidth]{images/exponentalb}
 	\caption{Graph of exponentially growing functions with $a=1$.}
 	\label{fig:differentb}
 \end{figure}
@@ -139,13 +136,9 @@ Such an inverse function is called \textbf{logarithm}.
 \begin{example}
 	Tones that we perceive as rising in equal steps actually grow by a constant factor in terms of frequency.
 	for example rising by an octave means doubling the frequency.
-	See Figure~\ref{fig:octave}.
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[width=0.48\textwidth]{images/octave}
-		\caption{Octaves and their associated frequency.}
-		\label{fig:octave}
-	\end{figure}
+	\begin{center}
+	\includegraphics[width=0.48\textwidth]{images/octave}
+	\end{center}
 \end{example}
 \annotation{37}
 \begin{tcolorbox}
@@ -161,10 +154,7 @@ Such an inverse function is called \textbf{logarithm}.
 \annotation{40}
 %\begin{example}
 %	Human brightness perception is exponential, meaning that a grayscale pattern that we perceive as ``changing in equal steps'' is actually increasing exponentially in brightness.
-%	\begin{figure}[ht]
-%		\centering
-%		\includegraphics[width=0.48\textwidth]{images/grayscale}
-%		\caption{Graph of exponentially growing functions with $a=1$.}
-%		\label{fig:grayscales}
-%	\end{figure}
+%	\begin{center}
+%	\includegraphics[width=0.48\textwidth]{images/grayscale}
+%	\end{center}
 %\end{example}
