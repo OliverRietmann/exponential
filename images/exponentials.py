@@ -13,11 +13,11 @@ filename_decay = "exponentials_decay.pdf" #sys.argv[2]
 def f(x, a, b):
     return a * b**x
 
-x = np.linspace(-2.0, 2.0, 100)
+x = np.linspace(-5.0, 5.0, 100)
 a = 1.0
 
 b_list = [4.0, 3.0, 2.0]
-b_label = ["$b=2$", "$b=3$", "$b=4$"]
+b_label = ["$b=4$", "$b=3$", "$b=2$"]
 plt.figure()
 plt.title("$f(x)=b^x$")
 for b, label in zip(b_list, b_label):
@@ -25,6 +25,10 @@ for b, label in zip(b_list, b_label):
     plt.plot(x, y, label=label)
 plt.xlabel(r"$x$")
 plt.ylabel(r"$f(x)$")
+plt.xlim([-5.0, 5.0])
+plt.ylim([-5.0, 5.0])
+ax = plt.gca()
+ax.set_aspect('equal', adjustable='box')
 plt.grid(True)
 plt.legend(loc="upper left", prop={'size': 16})
 plt.tight_layout()
