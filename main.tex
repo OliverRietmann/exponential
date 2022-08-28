@@ -6,6 +6,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{comment}
 \usepackage{graphicx}
 \usepackage{enumerate}
 %\usepackage[printsolution=true]{exercises}
@@ -23,8 +24,11 @@
 
 \setlength{\columnseprule}{1pt}
 
-\newcommand{\hide}{0}
+\newcommand{\hide}{1}
 \newcommand{\hideif}[1]{\if\hide1\phantom{#1}\else {#1}\fi}
+
+%\includecomment{solutions}
+\excludecomment{solutions}
 
 %\pagenumbering{gobble}
 \setlength{\parindent}{0pt}
@@ -102,9 +106,10 @@
 
 \begin{document}
 	\input{chapters/introduction}\newpage
-	\input{chapters/powers}\newpage
-	\input{chapters/rational_exponents}\newpage
-	\input{chapters/decay}\newpage
+	\input{chapters/exponential_equations}\newpage
+%	\input{chapters/powers}\newpage
+%	\input{chapters/rational_exponents}\newpage
+%	\input{chapters/decay}\newpage
 %	\input{chapters/exponential_equations}
 %	\input{chapters/exponential_function}
 %	\input{chapters/logarithm}

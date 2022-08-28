@@ -1,14 +1,45 @@
 \section*{Exponential Equations}
 We recall the basic laws for rational exponents:
 \begin{tcolorbox}
-	\begin{align*}
-		a^x\cdot a^y&=a^{x+y}&\text{(same base)}\\
-		a^x\cdot b^x&=\left(a\cdot b\right)^x&\text{(same exponent)}\\
-		\left(a^x\right)^y&=a^{x\cdot y}&\text{(exponent of a power)}\\
-		a^{-x}&=\frac{1}{a^x}&\text{(negative exponent)}\\
-		a^{\frac{1}{n}}&=\sqrt[n]{a}&\text{(root)}
-	\end{align*}
+	For bases $a,b\in\mathbb R$, exponents $x,y\in\mathbb Q$ and $n\in\mathbb N$, we have the following rules:
+	\begin{multicols}{3}
+		\centering
+		\textbf{same base}\\
+		\begin{align*}
+			a^x\cdot a^y&=a^{x+y} \\[10pt]
+			\frac{a^x}{a^y}&=a^{x-y} \\[10pt]
+			\left(a^x\right)^y&=a^{x\cdot y}
+		\end{align*}
+		\vfill
+		\columnbreak
+		
+		\textbf{same exponent}\\
+		\begin{align*}
+			\left(a\cdot b\right)^x&=a^x\cdot b^x \\[10pt]
+			\left(\frac{a}{b}\right)^x&=\frac{a^x}{b^x}
+		\end{align*}
+		\vfill
+		\columnbreak
+		
+		\textbf{definitions}\\
+		\begin{align*}
+			a^0&=1 \\[10pt]
+			a^{-x}&=\frac{1}{a^x} \\[10pt]
+			a^{\frac{1}{n}}&=\sqrt[n]{a}
+		\end{align*}
+		\vfill
+	\end{multicols}
+	Note that $x$ and $y$ can now be fractions of integers, for example $x=\frac{m}{n}$.
 \end{tcolorbox}
+%\begin{tcolorbox}
+%	\begin{align*}
+%		a^x\cdot a^y&=a^{x+y}&\text{(same base)}\\
+%		a^x\cdot b^x&=\left(a\cdot b\right)^x&\text{(same exponent)}\\
+%		\left(a^x\right)^y&=a^{x\cdot y}&\text{(exponent of a power)}\\
+%		a^{-x}&=\frac{1}{a^x}&\text{(negative exponent)}\\
+%		a^{\frac{1}{n}}&=\sqrt[n]{a}&\text{(root)}
+%	\end{align*}
+%\end{tcolorbox}
 These rules can be used to solve equations involving powers.
 \begin{exercise}
 	Determine all solutions:
@@ -21,29 +52,65 @@ These rules can be used to solve equations involving powers.
 		\task $x^{-\frac{5}{2}}=3^{\frac{5}{2}}$
 	\end{tasks}
 \end{exercise}
-Now we consider equations where the unknown $x$ occurs in the exponent, so-called $\textit{exponential equations}$. We solve them with the following recipe:
+\annotation{6}
 \begin{tcolorbox}
+	\textbf{Exponential equations:} The unknown $x$ occurs in the exponent.
+	\begin{itemize}
+		\item exponential equation: $2^x=16$
+		\item \textbf{not} an exponential equation: $x^2=16$
+	\end{itemize}
 	Solving exponential equations:
 	\begin{enumerate}[Step 1:]
-		\item Express both sides as powers with the same base.
+		\item Express both sides as in terms of the same base.
 		\item Compare the exponents.
 	\end{enumerate}
 \end{tcolorbox}
+\begin{example}
+	\begin{minipage}{0.45\textwidth}
+		\begin{align*}
+			\textrm{a)}\quad 2^x&=16 \\
+			2^x&=2^4 \\
+			x&=4 \\
+			\phantom{x+2}& \\
+			\phantom{x+2}&
+		\end{align*}
+	\end{minipage}\hfill
+	\begin{minipage}{0.45\textwidth}
+		\begin{align*}
+			\textrm{b)}\quad 3^{x+2}&=\frac{1}{27} \\
+			3^{x+2}&=3^{-3} \\
+			x+2&=-3 \\
+			x&=-5
+		\end{align*}
+	\end{minipage}
+\end{example}
+\annotation{10}
 \begin{exercise}
-	Solve for $x$:
+	Solve for $x$.
 	\begin{tasks}(4)
-		\task $2^x=32$
-		\task $5^x=25$
-		\task $3^x=81$
-		\task $7^x=1$
-		\task $3^x=\frac{1}{3}$
-		\task $2^x=\sqrt{2}$
-		\task $5^x=\frac{1}{125}$
-		\task $4^{x+1}=64$
+		\task $2^x=2$ \task $2^x=4$ \task $3^x=27$ \task $2^x=1$
+		\task $2^x=\frac{1}{2}$ \task $3^x=\frac{1}{3}$ \task $2^x=\frac{1}{8}$ \task $2^{x+1}=8$
+		\task $2^{x-2}=\frac{1}{4}$ \task $3^{x+1}=\frac{1}{27}$ \task $2^{x+1}=64$
+		\task $2^{1-2x}=\frac{1}{2}$
 	\end{tasks}
 \end{exercise}
+\annotation{17}
+%\begin{exercise}
+%	Solve for $x$.
+%	\begin{tasks}(4)
+%		\task $2^x=32$
+%		\task $5^x=25$
+%		\task $3^x=81$
+%		\task $7^x=1$
+%		\task $3^x=\frac{1}{3}$
+%		\task $2^x=\sqrt{2}$
+%		\task $5^x=\frac{1}{125}$
+%		\task $4^{x+1}=64$
+%	\end{tasks}
+%\end{exercise}
+%\annotation{25}
 \begin{exercise}
-	Solve for $x$:
+	Solve for $x$.
 	\begin{tasks}(4)
 		\task $8^x=32$
 		\task $4^x=\frac{1}{8}$
@@ -55,6 +122,7 @@ Now we consider equations where the unknown $x$ occurs in the exponent, so-calle
 		\task $25^{1+x}=\frac{1}{125}$
 	\end{tasks}
 \end{exercise}
+\annotation{25}
 \begin{exercise}
 	Solve for $x$, if possible:
 	\begin{tasks}(3)
@@ -66,8 +134,9 @@ Now we consider equations where the unknown $x$ occurs in the exponent, so-calle
 		\task $\left(\frac{1}{5}\right)^{x^2}\cdot 25^x=\frac{1}{125}$
 	\end{tasks}
 \end{exercise}
+\annotation{32}
 Now we consider more involved equations where the recipe cannot be applied directly.
-\begin{example*}
+\begin{example}
 	The previous approach fails for
 	\begin{equation*}
 		4^x+2^x-20=0
@@ -82,8 +151,8 @@ Now we consider more involved equations where the recipe cannot be applied direc
 	\end{align*}
 	The first equation yields $x=2$. The second one has no solution since $2^x>0$.
 	We conclude that $x=2$ is the only solution.
-\end{example*}
-
+\end{example}
+\annotation{37}
 \begin{exercise}
 	Determine all solutions:
 	\begin{tasks}(3)
@@ -95,3 +164,4 @@ Now we consider more involved equations where the recipe cannot be applied direc
 		\task $49^x+1=2\cdot 7^x$
 	\end{tasks}
 \end{exercise}
+\annotation{50}

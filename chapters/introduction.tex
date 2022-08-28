@@ -47,6 +47,7 @@
 		\task Draw the graph of the function $f\left(x\right)$ and compare it to the one in Example~\ref{ex:linear_growth}.
 	\end{tasks}
 \end{exercise}
+\begin{solutions}
 \begin{solution*}
 	At the end of year zero, we have 50 CHF on our bank account.
 	Consequently, at the beginning of year one, we will have $60=50\cdot 1.2$ CHF.
@@ -81,7 +82,12 @@
 		\item The function is given by $f\left(x\right)=50\cdot 1.2^x$ CHF.
 		\item The graph of $f\left(x\right)$ is given in Figure~\ref{fig:linear_exponential_growth} (right).
 	\end{enumerate}
+	\begin{tcolorbox}
+		Note the difference: This time, the function values change by a constant factor!
+	\end{tcolorbox}
 \end{solution*}
+\end{solutions}
+\if\hide1\vspace{8cm}\fi
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.45\textwidth]{images/linear_growth}\hfill
@@ -89,9 +95,6 @@
 	\caption{An example of linear growth (left) and exponential growth (right).}
 	\label{fig:linear_exponential_growth}
 \end{figure}
-\begin{tcolorbox}
-	Note the difference: This time, the function values change by a constant factor!
-\end{tcolorbox}
 \annotation{20}
 \begin{tcolorbox}
 	We say that a function $f\left(x\right)$ grows \ldots
@@ -115,11 +118,14 @@
 	The bank still pays in interest of 20\% at the end of each year.
 	How many years will it take until we have more than 500 CHF on our bank account?
 \end{exercise}
+\begin{solutions}
 \begin{solution*}
 	At the beginning of year $x$, we have $f\left(x\right)=80\cdot 1.2^x$ CHF on our bank account.
 	We have $f\left(10\right)=495.34$ CHF and $f\left(11\right)=594.41$ CHF (both rounded to two digits).
 	Hence it takes 11 years.
 \end{solution*}
+\end{solutions}
+\if\hide1\vspace{8cm}\fi
 \annotation{32}
 We have just solved our first \textbf{exponential equation}, i.e. an equation where $x$ occurs in the exponent.
 To solve these equations, we need the inverse function of $b^x$.
@@ -130,12 +136,13 @@ Such an inverse function is called \textbf{logarithm}.
 		\item Growth of bacteria populations
 		\item Radioactive decay
 		\item Number of infections during Corona
-		\item Human senses %: 
+		\item Human senses
+		\item \ldots
 	\end{itemize}
 \end{tcolorbox}
 \begin{example}
 	Tones that we perceive as rising in equal steps actually grow by a constant factor in terms of frequency.
-	for example rising by an octave means doubling the frequency.
+	For example rising by an octave means doubling the frequency.
 	\begin{center}
 	\includegraphics[width=0.48\textwidth]{images/octave}
 	\end{center}
@@ -148,7 +155,7 @@ Such an inverse function is called \textbf{logarithm}.
 		This is true for every exponentially growing function.
 		\item Exercise~\ref{ex:first_exponential_equation}: How do we solve for $x$ in the \textbf{exponent}?
 		\item This issue requires a new tool, the so-called \textbf{logarithm}.
-		\item What is $2^{0.5}$?
+		\item What is $2^{\frac{1}{2}}$?
 	\end{itemize}
 \end{tcolorbox}
 \annotation{40}

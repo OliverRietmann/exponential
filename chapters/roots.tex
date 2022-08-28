@@ -1,0 +1,186 @@
+\section{Roots and Rational Exponents}
+Now we are dealing with rational exponents $a^{\frac{m}{n}}$, where $a>0$ and $m,n\in\mathbb Z$ with $n\neq 0$.
+These are closely related to roots.
+\begin{tcolorbox}
+	Let $a\in\mathbb R$ and $n\in\mathbb N$. The expression
+	\begin{equation*}
+		\sqrt[n]{a}=b\qquad\text{means}\qquad a=b^n
+	\end{equation*}
+	and we say $b$ is an \textbf{\textit{n}th root} of $a$.
+	\textbf{If \textit{n} is even}\ldots
+	\begin{itemize}
+		\item \ldots an \textit{n}th root exists if and only if $a\geq 0$.
+		\item \ldots $-b$ is always another \textit{n}th root.
+		\item \ldots we only denote the nonnegative root by $\sqrt[n]{a}$ and call it the \textbf{principal} root.
+	\end{itemize}
+\end{tcolorbox}
+\begin{example}
+	We have
+	\begin{equation*}
+		2^2=4\qquad\text{and}\qquad\left(-2\right)^2=4.
+	\end{equation*}
+	This means that both $2$ and $-2$ are square roots of $4$.
+	However, only $2$ is called the \textbf{principal} square root of $4$.
+	Hence we write $\sqrt{4}=2$ but we do \textbf{not} write $\sqrt{4}=-2$.
+\end{example}
+\begin{tcolorbox}
+	Let $n\in\mathbb N$ and $a\in\mathbb R$. Then
+	\begin{align*}
+		\sqrt[n]{a^n}=a&\qquad\text{if }n\text{ is odd} \\
+		\sqrt[n]{a^n}=\lvert a\rvert&\qquad\text{if }n\text{ is even}
+	\end{align*}
+\end{tcolorbox}
+\begin{example}
+	The expression $\sqrt{\left(-2\right)^2}$ is by definition the positive number $b$ such that 
+	\begin{equation*}
+		\left(-2\right)^2=b^2.
+	\end{equation*}
+	The only positive solution is $b=2$ and thus
+	\begin{equation*}
+		\sqrt{\left(-2\right)^2}=\lvert -2\rvert=2.
+	\end{equation*}
+\end{example}
+\begin{tcolorbox}
+	Let $m,n\in\mathbb N$ and $a,b\in\mathbb R$. Then
+	\begin{equation*}
+		\sqrt[n]{a\cdot b}=\sqrt[n]{a}\cdot\sqrt[n]{b}\qquad\text{and}\qquad
+		\sqrt[n]{\frac{a}{b}}=\frac{\sqrt[n]{a}}{\sqrt[n]{b}}\qquad\text{and}\qquad
+		\sqrt[n]{a^m}=\left(\sqrt[n]{a}\right)^m,
+	\end{equation*}
+	with $b\neq 0$ in the equation in the middle.
+\end{tcolorbox}
+\begin{example}
+	If we naively apply the rule $(a^m)^n=a^{m\cdot n}$, we obtain
+	\begin{equation*}
+		a^{\frac{1}{2}}\cdot a^{\frac{1}{2}}
+		=\left(a^{\frac{1}{2}}\right)^2
+		=a^{\frac{1}{2}\cdot 2}=a^1=a.
+	\end{equation*}
+	This simply means
+	\begin{equation*}
+		a^{\frac{1}{2}}=\sqrt{a},
+	\end{equation*}
+	where we have assumed $a\geq0$.
+	The reason is that the square of a number always yields a positive number.
+	For example, $b^2=-1$ has no solution since $b^2>0$ even for negative $b$.
+\end{example}
+\begin{exercise}
+	A third root $\sqrt[3]{a}$ of $a$ is a number that satisfies
+	\begin{equation*}
+		\sqrt[3]{a}\cdot\sqrt[3]{a}\cdot\sqrt[3]{a}=\left(\sqrt[3]{a}\right)^3=a.
+	\end{equation*}
+	Explain why it makes sense to define $a^{\frac{1}{3}}=\sqrt[3]{a}$.
+\end{exercise}
+\begin{solution*}
+	This definition is compatible with the rule $(a^m)^n=a^{m\cdot n}$ since
+	\begin{equation*}
+		\left(a^{\frac{1}{3}}\right)^3=a^{\frac{1}{3}\cdot 3}=a^1=a.
+	\end{equation*}
+\end{solution*}
+This remains valid for higher roots
+\begin{equation*}
+	\underbrace{a^{\frac{1}{n}}\cdot a^{\frac{1}{n}}\cdot\ldots\cdot a^{\frac{1}{n}}}_{n\text{--times}}
+	=\left(a^{\frac{1}{n}}\right)^n=a^{\frac{1}{n}\cdot n}=a^1=a
+\end{equation*}
+and motivates the following definition of the $n$--th root
+\begin{equation*}
+	a^{\frac{1}{n}}=\sqrt[n]{a}.
+\end{equation*}
+We can thus extend the rules for exponents as follows.
+\begin{tcolorbox}
+	For bases $a,b>0$ and exponents $m,n\in\mathbb Z\setminus\left\{0\right\}$, we have the following rules:
+	\begin{multicols}{3}
+		\centering
+		\textbf{same base}\\
+		\begin{align*}
+			%a^{\frac{1}{m}}\cdot a^\frac{1}{n}&=a^{\frac{1}{m}+\frac{1}{n}} \\[10pt]
+			a^{\frac{m}{n}}&=\left(\sqrt[n]{a}\right)^m
+			=\sqrt[n]{a^m}
+		\end{align*}
+		\vfill
+		\columnbreak
+		
+		\textbf{same exponent}\\
+		\begin{align*}
+			\left(a\cdot b\right)^{\frac{1}{n}}&=\sqrt[n]{a}\cdot\sqrt[n]{b}% \\[10pt]
+			%\left(\frac{a}{b}\right)^\frac{1}{n}&=\frac{\sqrt[n]{a}}{\sqrt[n]{b}}
+		\end{align*}
+		\vfill
+		\columnbreak
+		
+		\textbf{definitions}\\
+		\begin{align*}
+			a^{\frac{1}{n}}&=\sqrt[n]{a}% \\[10pt]
+			%\textcolor{blue}{a^{-\frac{1}{n}}}&\textcolor{blue}{=\frac{1}{\sqrt[n]{a}}}
+		\end{align*}
+		\vfill
+	\end{multicols}
+\end{tcolorbox}
+\begin{example}
+	Write the term on the left as a power of two.
+	\begin{tasks}(3)
+		\task $\sqrt[3]{2}=2^{\frac{1}{3}}$
+		\task $\dfrac{1}{\sqrt{2}}=\dfrac{1}{2^{\frac{1}{2}}}$  \\[4pt]
+		$\phantom{\dfrac{1}{\sqrt{2}}}=2^{-\frac{1}{2}}$
+		\task $\sqrt[5]{4}=\left(2^2\right)^{\frac{1}{5}}$  \\[4pt]
+		$\phantom{\sqrt[5]{4}}=2^{2\cdot\frac{1}{5}}$ \\[4pt]
+		$\phantom{\sqrt[5]{4}}=2^{\frac{2}{5}}$
+	\end{tasks}
+\end{example}
+\begin{exercise}
+	Write as a power of two.
+	\begin{tasks}(5)
+		\task $\sqrt[5]{2}$
+		\task $\dfrac{1}{\sqrt[5]{2}}$
+		\task $2\sqrt{2}$
+		\task $4\sqrt{2}$
+		\task $\dfrac{1}{\sqrt[3]{2}}$
+		\task $2\cdot\sqrt[3]{2}$
+		\task $\frac{4}{\sqrt{2}}$
+		\task $\left(\sqrt{2}\right)^3$
+		\task $\dfrac{1}{\sqrt[3]{16}}$
+		\task $\dfrac{1}{\sqrt{8}}$
+	\end{tasks}
+\end{exercise}
+\begin{exercise}
+	Write as a power of three.
+	\begin{tasks}(5)
+		\task $\sqrt[3]{3}$
+		\task $\dfrac{1}{\sqrt[3]{3}}$
+		\task $\sqrt[4]{2}$
+		\task $3\sqrt{3}$
+		\task $\dfrac{1}{9\sqrt{3}}$
+	\end{tasks}
+\end{exercise}
+We can merge these rules into the previous ones simply by allowing rational exponents.
+\begin{tcolorbox}
+	For bases $a,b\in\mathbb R$, exponents $x,y\in\mathbb Q$ and $n\in\mathbb N$, we have the following rules:
+	\begin{multicols}{3}
+		\centering
+		\textbf{same base}\\
+		\begin{align*}
+			a^x\cdot a^y&=a^{x+y} \\[10pt]
+			\frac{a^x}{a^y}&=a^{x-y} \\[10pt]
+			\left(a^x\right)^y&=a^{x\cdot y}
+		\end{align*}
+		\vfill
+		\columnbreak
+		
+		\textbf{same exponent}\\
+		\begin{align*}
+			\left(a\cdot b\right)^x&=a^x\cdot b^x \\[10pt]
+			\left(\frac{a}{b}\right)^x&=\frac{a^x}{b^x}
+		\end{align*}
+		\vfill
+		\columnbreak
+		
+		\textbf{definitions}\\
+		\begin{align*}
+			a^0&=1 \\[10pt]
+			a^{-x}&=\frac{1}{a^x} \\[10pt]
+			\textcolor{blue}{a^{\frac{1}{n}}}&\textcolor{blue}{=\sqrt[n]{a}}
+		\end{align*}
+		\vfill
+	\end{multicols}
+	Note that $x$ and $y$ can now be fractions of integers, for example $x=\frac{m}{n}$.
+\end{tcolorbox}
