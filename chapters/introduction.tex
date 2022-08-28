@@ -1,12 +1,10 @@
 \section{Introduction: Exponential Growth}
 %Before we look at exponential growth, let us recall the familiar concept of \textit{linear growth}.
 \begin{example} \label{ex:linear_growth}
-	Suppose we have a bank account with 50 CHF at the beginning of year zero.
-	At the end of every year, we deposit 20 CHF.
-	How much money are we going to have at the beginning of year $x$?
-	The answer clearly is $20x+50$ CHF.
-	This is visualized in Figure~\ref{fig:linear_exponential_growth} (left).
-	Also, we can fill the amount of money at the beginning of each year into a table.
+	Suppose we have a bank account with 50 CHF in year zero.
+	Every year, we deposit 20 CHF.
+	This can be visualized in a table.
+	%This is visualized in Figure~\ref{fig:linear_exponential_growth} (left).
 %	\begin{table}[ht]
 %		\centering
 %		\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|} \hline
@@ -34,25 +32,32 @@
 		\draw (mx.west) -- (mx.east);
 	\end{tikzpicture}
 	\end{center}
+	How much money are we going to have in year $x$?
+	The answer clearly is (in CHF)
+	\begin{equation*}
+		20x+50.
+	\end{equation*}
+	This is an example of \textbf{linear growth}.
 \end{example}
-\annotation{5}
+\annotation{3}
 \begin{exercise} \label{ex:exponential_growth}
-	Suppose we have again a bank account with 50 CHF at the beginning of year zero.
-	But now, we will not deposit any additional money.
-	Instead, the bank pays us an interest of 20\% at the end of each year.
-	So if we have 100 CHF on our bank account during a certain year, then the bank will pay us 20 CHF (i.e. 20\%) at the end of that year.
+	Suppose we have again a bank account with 50 CHF in year zero.
+	We will not deposit any money.
+	Instead, the bank pays us an interest of 20\% each year.
+	For example, if we have 100 CHF on our bank account during a certain year, then we will have 120 CHF in the next year.
 	\begin{tasks}
-		\task How much money are we going to have at the beginning of year $x$? Create and fill a table analogously to the one in Example~\ref{ex:linear_growth}.
-		\task Find a function $f\left(x\right)$ that returns the amount of money at the end of year $x$.
+		\task How much money are we going to have in year $x$? Create and fill a table analogously to the one in Example~\ref{ex:linear_growth}.
+		How do the tables differ?
+		\task Find a function $f\left(x\right)$ that returns the amount of money in year $x$.
 		\task Draw the graph of the function $f\left(x\right)$ and compare it to the one in Example~\ref{ex:linear_growth}.
 	\end{tasks}
 \end{exercise}
 \begin{solutions}
 \begin{solution*}
-	At the end of year zero, we have 50 CHF on our bank account.
-	Consequently, at the beginning of year one, we will have $60=50\cdot 1.2$ CHF.
-	At the end of year two, we have $72=60\cdot 1.2$ CHF.
-	This can also bewritten as $72=50\cdot 1.2^2$ CHF.
+	In year zero, we have 50 CHF on our bank account.
+	Thus in year one, we will have $60=50\cdot 1.2$ CHF.
+	In year two, it will be $72=60\cdot 1.2$ CHF.
+	This can also be written as $72=50\cdot 1.2^2$ CHF.
 	Following this scheme, we arrive at the solution given below.
 	\begin{enumerate}[a)]
 		\item The table is given by
@@ -79,23 +84,18 @@
 			\draw (mx.west) -- (mx.east);
 		\end{tikzpicture}
 		\end{center}
-		\item The function is given by $f\left(x\right)=50\cdot 1.2^x$ CHF.
-		\item The graph of $f\left(x\right)$ is given in Figure~\ref{fig:linear_exponential_growth} (right).
-	\end{enumerate}
-	\begin{tcolorbox}
 		Note the difference: This time, the function values change by a constant factor!
-	\end{tcolorbox}
+		\item The function is given by $f\left(x\right)=50\cdot 1.2^x$ CHF.
+		\item The graph of $f\left(x\right)$ is given below.
+	\end{enumerate}
+	\begin{center}
+		\includegraphics[width=0.45\textwidth]{images/linear_growth}\hfill
+		\includegraphics[width=0.45\textwidth]{images/quadratic_growth}
+	\end{center}
 \end{solution*}
 \end{solutions}
 \if\hide1\vspace*{8cm}\fi
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.45\textwidth]{images/linear_growth}\hfill
-	\includegraphics[width=0.45\textwidth]{images/quadratic_growth}
-	\caption{An example of linear growth (left) and exponential growth (right).}
-	\label{fig:linear_exponential_growth}
-\end{figure}
-\annotation{20}
+\annotation{15}
 \begin{tcolorbox}
 	We say that a function $f\left(x\right)$ grows \ldots
 	\begin{itemize}
@@ -112,7 +112,7 @@
 	\caption{Graph of exponentially growing functions with $a=1$.}
 	\label{fig:differentb}
 \end{figure}
-\annotation{25}
+\annotation{20}
 \begin{exercise} \label{ex:first_exponential_equation}
 	This time, we have only 20 CHF on our bank account at year zero.
 	The bank still pays in interest of 20\% at the end of each year.
@@ -120,15 +120,15 @@
 \end{exercise}
 \begin{solutions}
 \begin{solution*}
-	At the beginning of year $x$, we have $f\left(x\right)=80\cdot 1.2^x$ CHF on our bank account.
-	We have $f\left(10\right)=495.34$ CHF and $f\left(11\right)=594.41$ CHF (both rounded to two digits).
+	In year $x$, we have $f\left(x\right)=80\cdot 1.2^x$ CHF on our bank account.
+	Consequently, we have $f\left(10\right)=495.34$ CHF and $f\left(11\right)=594.41$ CHF (both rounded to two digits).
 	Hence it takes 11 years.
 \end{solution*}
 \end{solutions}
 \if\hide1\vspace*{4cm}\fi
-\annotation{32}
+\annotation{25}
 We have just solved our first \textbf{exponential equation}, i.e. an equation where $x$ occurs in the exponent.
-To solve these equations, we need the inverse function of $b^x$.
+To efficiently solve these equations, we need the inverse function of $b^x$.
 Such an inverse function is called \textbf{logarithm}.
 \begin{tcolorbox}
 	Many quantities in nature grow or decay exponentially.
@@ -147,7 +147,7 @@ Such an inverse function is called \textbf{logarithm}.
 	\includegraphics[width=0.48\textwidth]{images/octave}
 	\end{center}
 \end{example}
-\annotation{37}
+\annotation{28}
 \begin{tcolorbox}
 	Outlook:
 	\begin{itemize}
@@ -158,7 +158,7 @@ Such an inverse function is called \textbf{logarithm}.
 		\item What is $2^{\frac{1}{2}}$?
 	\end{itemize}
 \end{tcolorbox}
-\annotation{40}
+\annotation{30}
 %\begin{example}
 %	Human brightness perception is exponential, meaning that a grayscale pattern that we perceive as ``changing in equal steps'' is actually increasing exponentially in brightness.
 %	\begin{center}
