@@ -23,39 +23,56 @@ We arrive at the following table.
 		\draw (mx.west) -- (mx.east);
 	\end{tikzpicture}
 \end{figure}
-
-Suppose that at time zero, we have $a\in\mathbb N$ atoms of the \ce{^{14}C} isotope.
-We want to find a function $f\left(x\right)$ that returns the expected number of \ce{^{14}C} atoms after $x$ years.
-Put differently, the function $f\left(x\right)$ should yield exactly the values in the table above (where $x$ is the first row and $f\left(x\right)$ is the second row), this means
+the number of remaining atoms after $x$ is given by the function
 \begin{equation*}
-	f\left(0\right)=a,\quad
-	f\left(5730\right)=\frac{a}{2},\quad
-	f\left(5730\cdot 2\right)=\frac{a}{2^2},\quad\ldots,\quad
-	f\left(5730\cdot n\right)=\frac{a}{2^n}.
+	f\left(x\right)=a\cdot 2^{-\frac{x}{5730}}
 \end{equation*}
-\begin{minipage}{0.48\textwidth}
-	These conditions are satisfied by
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/decay}
+	\caption{Decay of \ce{^{14}C} with $a=1024$ atoms.}
+\end{figure}
+\begin{tcolorbox}
+	An \textbf{exponential function} is a function that can be written as
 	\begin{equation*}
-		f\left(x\right)=a\left(\frac{1}{2}\right)^{\tfrac{x}{5730}},
+		f\left(x\right)=a\cdot b^x
 	\end{equation*}
-	because
+	for some $a\in\mathbb R\setminus\left\{0\right\}$ and some $b>0$.
+\end{tcolorbox}
+\begin{exercise}
+	Show that
 	\begin{equation*}
-		f\left(5730\cdot n\right)=a\left(\frac{1}{2}\right)^{\tfrac{5730\cdot n}{5730}}
-		=a\left(\frac{1}{2}\right)^n
-		=\frac{a}{2^n}.
+		f\left(x\right)=a\cdot 2^{-\frac{x}{5730}}
 	\end{equation*}
-	Finally, this can be re-written as
-	\begin{equation*}
-		f\left(x\right)=a\cdot 2^{-x/5730}.
-	\end{equation*}
-	The graph of $f$ is shown on the left.
-\end{minipage}\hfill
-\begin{minipage}{0.48\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{images/decay}\hfill
-		Decay of \ce{^{14}C} with $a=1024$ atoms.
-\end{minipage}
-	We could also ask, how many \ce{^{14}C} atoms are left after $x=\frac{5730}{2}=2865$ years
+	is an exponential function, that is find $b$.
+\end{exercise}
+
+Our function has to satisfy the requirement
+\begin{equation*}
+	f\left(5730\cdot n\right)=\frac{a}{2^n}
+\end{equation*}
+for all $n\in\mathbb N$.
+We can rewrite the right hand side as follows.
+\begin{equation*}
+	\frac{a}{2^n}=a\cdot 2^{-n}=2^{-\frac{5730\cdot n}{5730}}.
+\end{equation*}
+
+These conditions are satisfied by
+\begin{equation*}
+	f\left(x\right)=a\left(\frac{1}{2}\right)^{\tfrac{x}{5730}},
+\end{equation*}
+because
+\begin{equation*}
+	f\left(5730\cdot n\right)=a\left(\frac{1}{2}\right)^{\tfrac{5730\cdot n}{5730}}
+	=a\left(\frac{1}{2}\right)^n
+	=\frac{a}{2^n}.
+\end{equation*}
+Finally, this can be re-written as
+\begin{equation*}
+	f\left(x\right)=a\cdot 2^{-x/5730}.
+\end{equation*}
+The graph of $f$ is shown on the left.
+We could also ask, how many \ce{^{14}C} atoms are left after $x=\frac{5730}{2}=2865$ years
 \begin{equation*}
 	f\left(\tfrac{5730}{2}\right)=a\cdot 2^{-\frac{1}{2}}.
 \end{equation*}
@@ -85,34 +102,11 @@ How can we multiply 2 by itself for $-\frac{1}{2}$ times?
 In fact, we have been using our rules of computation for the rational exponent $-\frac{x}{5730}$.
 It turns out, that all the rules for exponents we know work more generally for real exponents.
 \begin{tcolorbox}
-	For exponents $m,n\in\mathbb R$, we have the following rules:
-	\begin{multicols}{3}
-		\centering
-		\textbf{same base}\\
-		\begin{align*}
-			a^m\cdot a^n&=a^{m+n} \\[10pt]
-			\frac{a^m}{a^n}&=a^{m-n} \\[10pt]
-			\left(a^m\right)^n&=a^{m\cdot n}
-		\end{align*}
-		\vfill
-		\columnbreak
-		
-		\textbf{same exponent}\\
-		\begin{align*}
-			\left(a\cdot b\right)^n&=a^n\cdot b^n \\[10pt]
-			\left(\frac{a}{b}\right)^n&=\frac{a^n}{b^n}
-		\end{align*}
-		\vfill
-		\columnbreak
-		
-		\textbf{definitions}\\
-		\begin{align*}
-			a^0&=1 \\[10pt]
-			a^{-n}&=\frac{1}{a^n}
-		\end{align*}
-		\vfill
-	\end{multicols}
-	Whenever negative powers are involved, the base must not be zero.
+	An \textbf{exponential function} is a function that can be written as
+	\begin{equation*}
+		f\left(x\right)=a\cdot b^x
+	\end{equation*}
+	for some $a\in\mathbb R\setminus\left\{0\right\}$ and some $b>0$.
 \end{tcolorbox}
 This means that we can re-write the function for radioactive decay of \ce{^{14}C}.
 \begin{equation*}

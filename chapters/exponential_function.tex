@@ -1,2 +1,91 @@
-\section*{Exponential Function}
-\textcolor{red}{TODO: Euler's number e, properties, exercises}
+\section{Exponential Function}
+\textcolor{red}{TODO: Euler's number e, properties, exercises}\\
+The \ce{^{14}C} isotope of carbon has a \textbf{half-live} of 5730 years, that is \textbf{every \ce{^{14}C} atom has a probability of 50\% to decay with the next 5730 years}.
+Put differently, for any given an amount $a$ of \ce{^{14}C} atoms, we expect that after 5730 years, half of them will have decayed, so that we are left with roughly $\frac{a}{2}$ atoms.
+After another 5730 years we will be left with half of $\frac{a}{2}$, i.e. with $\frac{a}{4}$.
+We arrive at the following table.
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}
+		\matrix[matrix of math nodes,draw, column sep=1em,row sep=.5mm] (mx) {
+			\textrm{year} & 0 & 5730 & 11460 & 17190 & 22920 & 28650 & 34380 \\
+			\textrm{atoms} & \phantom{\frac{a}{1}}a\phantom{\frac{a}{1}} & \frac{a}{2} & \frac{a}{2^2} & \frac{a}{2^3} & \frac{a}{2^4} & \frac{a}{2^5} & \frac{a}{2^6} \\
+		};
+		\path[->,shorten >=2pt]
+		\foreach \from/\to in {2/3,3/4,4/5,5/6,6/7,7/8} {
+			([yshift=2mm]mx-1-\from.north) edge[bend left]
+			node[above] {$\scriptstyle+5730$} ([yshift=2mm]mx-1-\to.north)
+			([yshift=-2.5mm]mx-2-\from.south) edge[bend right]
+			node[below] {$\scriptstyle\cdot\frac{1}{2}$} ([yshift=-2.5mm]mx-2-\to.south)
+		};
+		\foreach \x in {2,...,8}{
+			\draw ([xshift=-1em]mx.north west -| mx-1-\x.west) -- ([xshift=-1em]mx.south west -| mx-1-\x.west);
+		};
+		\draw (mx.west) -- (mx.east);
+	\end{tikzpicture}
+\end{figure}
+the number of remaining atoms after $x$ is given by the function
+\begin{equation*}
+	f\left(x\right)=a\cdot 2^{-\frac{x}{5730}}
+\end{equation*}
+\begin{minipage}{0.48\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{images/decay}
+\end{minipage}\hfill
+\begin{minipage}{0.48\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{images/kriener_exponential}
+\end{minipage}
+\begin{tcolorbox}
+	An \textbf{exponential function} is a function that can be written as
+	\begin{equation*}
+		f\left(x\right)=a\cdot b^x
+	\end{equation*}
+	for some $a\in\mathbb R\setminus\left\{0\right\}$ and some $b>0$.
+	We call \ldots
+	\begin{itemize}
+		\item[] \ldots$a$ the \textbf{initial value} and \ldots
+		\item[] \ldots$b$ the \textbf{growth factor} (even if $b<1$).
+	\end{itemize}
+\end{tcolorbox}
+\begin{exercise}
+	Show that
+	\begin{equation*}
+		f\left(x\right)=a\cdot 2^{-\frac{x}{5730}}
+	\end{equation*}
+	is an exponential function, i.e. find $b$.
+	Why do you think $a$ is called initial value?
+\end{exercise}
+\pagebreak[1]
+For a linear function $g\left(x\right)=a\cdot x+b$, we have
+\begin{equation*}
+	g\left(x+n\right)=a\cdot\left(x+n\right)+b=a\cdot x+b+a\cdot n=g\left(x\right)+a\cdot n.
+\end{equation*}
+Hence advancing on the $x$ axis by $n$ changes the function value by \textbf{adding} $a\cdot n$.
+On the other hand, for an exponential function $f(x)=ab^x$, we have
+\begin{equation*}
+	f\left(x+n\right)=a\cdot b^{x+n}=a\cdot b^x\cdot b^n=f\left(x\right)\cdot b^n.
+\end{equation*}
+Advancing on the $x$ axis by $n$ changes the function value by the \textbf{factor} $b^n$.
+\begin{exercise}
+	\begin{tabular}{|c|c|c|}\hline
+		1 & 2 & 3 \\ \hline
+	\end{tabular}
+\end{exercise}
+\begin{exercise}
+	Consider two points $P=\left(2,12\right)$ and $Q=\left(10,3072\right)$.
+	\begin{tasks}
+		\task Find the linear function $g\left(x\right)=a\cdot x+b$ that passes through these points.
+		\task Find the exponential function $f\left(x\right)=a\cdot b^x$ that passes through these points.
+		\task Given two points, is there always a linear function passing through these points?
+		\task Given two points, is there always an exponential function passing through these points?
+	\end{tasks}
+\end{exercise}
+%\begin{exercise}
+%	Consider again the function
+%	\begin{equation*}
+%		f\left(x\right)=a\cdot 2^{-\frac{x}{5730}},
+%	\end{equation*}
+%	where $a$ is now unknown.
+%	Suppuse that at time $x=$
+%\end{exercise}
