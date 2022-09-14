@@ -30,11 +30,11 @@ the number of remaining atoms after $x$ is given by the function
 \end{equation*}
 \begin{minipage}{0.48\textwidth}
 	\centering
-	\includegraphics[width=\textwidth]{images/decay}
+	%\includegraphics[width=\textwidth]{images/decay}
 \end{minipage}\hfill
 \begin{minipage}{0.48\textwidth}
 	\centering
-	\includegraphics[width=\textwidth]{images/kriener_exponential}
+	%\includegraphics[width=\textwidth]{images/kriener_exponential}
 \end{minipage}
 \begin{tcolorbox}
 	An \textbf{exponential function} is a function that can be written as
@@ -68,8 +68,51 @@ On the other hand, for an exponential function $f(x)=ab^x$, we have
 \end{equation*}
 Advancing on the $x$ axis by $n$ changes the function value by the \textbf{factor} $b^n$.
 \begin{exercise}
-	\begin{tabular}{|c|c|c|}\hline
-		1 & 2 & 3 \\ \hline
+	These tables contain the values of a function $f\left(x\right)=a\cdot b^x$.
+	Complete the tables and determine $a$ and $b$.
+	\begin{center}
+	\begin{tikzpicture}
+		\node at (-5,0) {a)};
+		\matrix[matrix of math nodes,draw, column sep=1em,row sep=.5mm] (mx) {
+			x & 0 & 1 & 2 & 3 & 4 & 5 \\
+			f\left(x\right) & \frac{243}{32} & \frac{8}{27} & \frac{2}{3} & \frac{3}{2} & \frac{27}{8} & \frac{243}{32} \\
+		};
+		\path[->,shorten >=2pt]
+		\foreach \from/\to in {2/3,3/4,4/5,5/6,6/7} {
+			([yshift=2mm]mx-1-\from.north) edge[bend left]
+			node[above] {$\scriptstyle+1$} ([yshift=2mm]mx-1-\to.north)
+			([yshift=-2.5mm]mx-2-\from.south) edge[bend right]
+			node[below] {$\scriptstyle\times\frac{9}{4}$} ([yshift=-2.5mm]mx-2-\to.south)
+		};
+		\foreach \x in {2,...,7}{
+			\draw ([xshift=-1em]mx.north west -| mx-1-\x.west) -- ([xshift=-1em]mx.south west -| mx-1-\x.west);
+		};
+		\draw (mx.west) -- (mx.east);
+	\end{tikzpicture}
+	\begin{tikzpicture}
+		\node at (-5,0) {b)};
+		\matrix[matrix of math nodes,draw, column sep=1em,row sep=.5mm] (mx) {
+			x & -8 & 1 & 4 & 5 & 6 & 7 \\
+			f\left(x\right) &  &  & \frac{3}{2} & & 6 & \\
+		};
+%		\path[->,shorten >=2pt]
+%		\foreach \from/\to in {2/3,3/4,4/5,5/6,6/7} {
+%			([yshift=2mm]mx-1-\from.north) edge[bend left]
+%			node[above] {$\scriptstyle+1$} ([yshift=2mm]mx-1-\to.north)
+%			([yshift=-2.5mm]mx-2-\from.south) edge[bend right]
+%			node[below] {$\scriptstyle\times\frac{9}{4}$} ([yshift=-2.5mm]mx-2-\to.south)
+%		};
+		\foreach \x in {2,...,7}{
+			\draw ([xshift=-1em]mx.north west -| mx-1-\x.west) -- ([xshift=-1em]mx.south west -| mx-1-\x.west);
+		};
+		\draw (mx.west) -- (mx.east);
+	\end{tikzpicture}
+	\end{center}
+	\renewcommand{\arraystretch}{2.5}
+	\setlength{\tabcolsep}{15pt}
+	\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+		$x$ & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+		$f\left(x\right)$ & & & $\dfrac{2}{3}$ & $\dfrac{3}{2}$ & & \\ \hline
 	\end{tabular}
 \end{exercise}
 \begin{exercise}
