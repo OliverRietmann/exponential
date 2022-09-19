@@ -1,22 +1,20 @@
 \section{Exponential Function}
-\textcolor{red}{TODO: Euler's number e, properties, exercises}\\
-The \ce{^{14}C} isotope of carbon has a \textbf{half-live} of 5730 years, that is \textbf{every \ce{^{14}C} atom has a probability of 50\% to decay with the next 5730 years}.
-Put differently, for any given an amount $a$ of \ce{^{14}C} atoms, we expect that after 5730 years, half of them will have decayed, so that we are left with roughly $\frac{a}{2}$ atoms.
-After another 5730 years we will be left with half of $\frac{a}{2}$, i.e. with $\frac{a}{4}$.
-We arrive at the following table.
+The population of a village is growing by 6.25\% every year.
+At year zero, the population consists of 4096 people.
+This yields the following table (rounded to integers) for the expected population after $x$ years.
 \begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}
 		\matrix[matrix of math nodes,draw, column sep=1em,row sep=.5mm] (mx) {
-			\textrm{year} & 0 & 5730 & 11460 & 17190 & 22920 & 28650 & 34380 \\
-			\textrm{atoms} & \phantom{\frac{a}{1}}a\phantom{\frac{a}{1}} & \frac{a}{2} & \frac{a}{2^2} & \frac{a}{2^3} & \frac{a}{2^4} & \frac{a}{2^5} & \frac{a}{2^6} \\
+			\textrm{year x} & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+			\textrm{population $f(x)$} & 4096 & 4352 & 4624 & 4913 & 5220 & 5546 & 5893 \\
 		};
 		\path[->,shorten >=2pt]
 		\foreach \from/\to in {2/3,3/4,4/5,5/6,6/7,7/8} {
 			([yshift=2mm]mx-1-\from.north) edge[bend left]
-			node[above] {$\scriptstyle+5730$} ([yshift=2mm]mx-1-\to.north)
+			node[above] {$\scriptstyle+1$} ([yshift=2mm]mx-1-\to.north)
 			([yshift=-2.5mm]mx-2-\from.south) edge[bend right]
-			node[below] {$\scriptstyle\cdot\frac{1}{2}$} ([yshift=-2.5mm]mx-2-\to.south)
+			node[below] {$\scriptstyle\cdot\frac{17}{16}$} ([yshift=-2.5mm]mx-2-\to.south)
 		};
 		\foreach \x in {2,...,8}{
 			\draw ([xshift=-1em]mx.north west -| mx-1-\x.west) -- ([xshift=-1em]mx.south west -| mx-1-\x.west);
@@ -24,18 +22,18 @@ We arrive at the following table.
 		\draw (mx.west) -- (mx.east);
 	\end{tikzpicture}
 \end{figure}
-the number of remaining atoms after $x$ is given by the function
+The population size as a function of the number of years $x$ is given by
 \begin{equation*}
-	f\left(x\right)=a\cdot 2^{-\frac{x}{5730}}
+	f\left(x\right)=4096\cdot\left(\frac{17}{16}\right)^x.
 \end{equation*}
-\begin{minipage}{0.48\textwidth}
-	\centering
-	%\includegraphics[width=\textwidth]{images/decay}
-\end{minipage}\hfill
-\begin{minipage}{0.48\textwidth}
-	\centering
-	%\includegraphics[width=\textwidth]{images/kriener_exponential}
-\end{minipage}
+%\begin{minipage}{0.48\textwidth}
+%	\centering
+%	%\includegraphics[width=\textwidth]{images/decay}
+%\end{minipage}\hfill
+%\begin{minipage}{0.48\textwidth}
+%	\centering
+%	%\includegraphics[width=\textwidth]{images/kriener_exponential}
+%\end{minipage}
 \begin{tcolorbox}
 	An \textbf{exponential function} is a function that can be written as
 	\begin{equation*}
@@ -48,82 +46,77 @@ the number of remaining atoms after $x$ is given by the function
 		\item[] \ldots$b$ the \textbf{growth factor} (even if $b<1$).
 	\end{itemize}
 \end{tcolorbox}
-\begin{exercise}
-	Show that
+%\begin{exercise}
+%	Show that
+%	\begin{equation*}
+%		f\left(x\right)=a\cdot 2^{-\frac{x}{5730}}
+%	\end{equation*}
+%	is an exponential function, i.e. find $b$.
+%	Why do you think $a$ is called initial value?
+%\end{exercise}
+\begin{itemize}
+	\item For a linear function $g\left(x\right)=a\cdot x+b$, we have
 	\begin{equation*}
-		f\left(x\right)=a\cdot 2^{-\frac{x}{5730}}
+		g\left(x+n\right)=a\cdot\left(x+n\right)+b=a\cdot x+b+a\cdot n=g\left(x\right)+a\cdot n.
 	\end{equation*}
-	is an exponential function, i.e. find $b$.
-	Why do you think $a$ is called initial value?
-\end{exercise}
-\pagebreak[1]
-For a linear function $g\left(x\right)=a\cdot x+b$, we have
-\begin{equation*}
-	g\left(x+n\right)=a\cdot\left(x+n\right)+b=a\cdot x+b+a\cdot n=g\left(x\right)+a\cdot n.
-\end{equation*}
-Hence advancing on the $x$ axis by $n$ changes the function value by \textbf{adding} $a\cdot n$.
-On the other hand, for an exponential function $f(x)=ab^x$, we have
-\begin{equation*}
-	f\left(x+n\right)=a\cdot b^{x+n}=a\cdot b^x\cdot b^n=f\left(x\right)\cdot b^n.
-\end{equation*}
-Advancing on the $x$ axis by $n$ changes the function value by the \textbf{factor} $b^n$.
+	Hence advancing on the $x$ axis by $n$ changes the function value by \textbf{adding} $a\cdot n$.
+	\item On the other hand, for an exponential function $f(x)=a\cdot b^x$, we have
+	\begin{equation*}
+		f\left(x+n\right)=a\cdot b^{x+n}=a\cdot b^x\cdot b^n=f\left(x\right)\cdot b^n.
+	\end{equation*}
+	Advancing on the $x$ axis by $n$ changes the function value by the \textbf{factor} $b^n$.
+\end{itemize}
 \begin{exercise}
 	These tables contain the values of a function $f\left(x\right)=a\cdot b^x$.
-	Complete the tables and determine $a$ and $b$.
-	\begin{center}
-	\begin{tikzpicture}
-		\node at (-5,0) {a)};
-		\matrix[matrix of math nodes,draw, column sep=1em,row sep=.5mm] (mx) {
-			x & 0 & 1 & 2 & 3 & 4 & 5 \\
-			f\left(x\right) & \frac{243}{32} & \frac{8}{27} & \frac{2}{3} & \frac{3}{2} & \frac{27}{8} & \frac{243}{32} \\
-		};
-		\path[->,shorten >=2pt]
-		\foreach \from/\to in {2/3,3/4,4/5,5/6,6/7} {
-			([yshift=2mm]mx-1-\from.north) edge[bend left]
-			node[above] {$\scriptstyle+1$} ([yshift=2mm]mx-1-\to.north)
-			([yshift=-2.5mm]mx-2-\from.south) edge[bend right]
-			node[below] {$\scriptstyle\times\frac{9}{4}$} ([yshift=-2.5mm]mx-2-\to.south)
-		};
-		\foreach \x in {2,...,7}{
-			\draw ([xshift=-1em]mx.north west -| mx-1-\x.west) -- ([xshift=-1em]mx.south west -| mx-1-\x.west);
-		};
-		\draw (mx.west) -- (mx.east);
-	\end{tikzpicture}
-	\begin{tikzpicture}
-		\node at (-5,0) {b)};
-		\matrix[matrix of math nodes,draw, column sep=1em,row sep=.5mm] (mx) {
-			x & -8 & 1 & 4 & 5 & 6 & 7 \\
-			f\left(x\right) &  &  & \frac{3}{2} & & 6 & \\
-		};
-%		\path[->,shorten >=2pt]
-%		\foreach \from/\to in {2/3,3/4,4/5,5/6,6/7} {
-%			([yshift=2mm]mx-1-\from.north) edge[bend left]
-%			node[above] {$\scriptstyle+1$} ([yshift=2mm]mx-1-\to.north)
-%			([yshift=-2.5mm]mx-2-\from.south) edge[bend right]
-%			node[below] {$\scriptstyle\times\frac{9}{4}$} ([yshift=-2.5mm]mx-2-\to.south)
-%		};
-		\foreach \x in {2,...,7}{
-			\draw ([xshift=-1em]mx.north west -| mx-1-\x.west) -- ([xshift=-1em]mx.south west -| mx-1-\x.west);
-		};
-		\draw (mx.west) -- (mx.east);
-	\end{tikzpicture}
-	\end{center}
-	\renewcommand{\arraystretch}{2.5}
+	Complete the tables and determine $a\in\mathbb R\setminus\left\{0\right\}$ and $b>0$.
+	\renewcommand{\arraystretch}{2}
 	\setlength{\tabcolsep}{15pt}
-	\begin{tabular}{|c|c|c|c|c|c|c|}\hline
-		$x$ & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
-		$f\left(x\right)$ & & & $\dfrac{2}{3}$ & $\dfrac{3}{2}$ & & \\ \hline
-	\end{tabular}
-\end{exercise}
-\begin{exercise}
-	Consider two points $P=\left(2,12\right)$ and $Q=\left(10,3072\right)$.
-	\begin{tasks}
-		\task Find the linear function $g\left(x\right)=a\cdot x+b$ that passes through these points.
-		\task Find the exponential function $f\left(x\right)=a\cdot b^x$ that passes through these points.
-		\task Given two points, is there always a linear function passing through these points?
-		\task Given two points, is there always an exponential function passing through these points?
+	%\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+	\begin{tasks}(1)
+		\task \hspace{10pt} \begin{tabular}{|c|c|c|c|c|c|c|}\hline
+			$x$ & 0 & 1 & 4 & 5 & 6 & 7 \\ \hline
+			$f\left(x\right)$ & & & $\dfrac{2}{3}$ & $\dfrac{3}{2}$ & $\dfrac{27}{8}$ & \\[6pt] \hline
+		\end{tabular} \vspace{30pt}
+		\task \hspace{10pt} \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}\hline
+			$x$ & $\smash{-}8$ & 1 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+			$f\left(x\right)$ &  &  & $\dfrac{3}{2}$ & & 6 & & & & \\[6pt] \hline
+		\end{tabular} \vspace{15pt}
+		\task \hspace{10pt} \begin{tabular}{|c|c|c|c|c|c|c|}\hline
+			$x$ & 0 & 3 & 4 & 5 & 6 & 10 \\ \hline
+			$f\left(x\right)$ &  & $\dfrac{9}{8}$ &  & & $\dfrac{1}{3}$ & \\[6pt] \hline
+		\end{tabular}
 	\end{tasks}
 \end{exercise}
+\begin{exercise}
+	Which function belongs to which plot?\\[10pt]
+	\begin{minipage}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{images/choose_exp_1}
+	\end{minipage}
+	\begin{minipage}{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{images/choose_exp_2}
+	\end{minipage}
+\end{exercise}
+\begin{exercise}
+	The following two points lie on the function $f\left(x\right)=a\cdot b^x$.
+	Determine $a\in\mathbb R\setminus\left\{0\right\}$ and $b>0$.
+	\begin{tasks}(2)
+		\task $\left(-2,20\right)$ and $\left(3,\frac{3}{5}\right)$
+		\task $\left(0,2\right)$ and $\left(2,18\right)$
+		\task $\left(2,12\right)$ and $\left(10,3072\right)$
+		\task $\left(-4.1,0.004\right)$ and $\left(1.9,0.5\right)$
+	\end{tasks}
+\end{exercise}
+%\begin{exercise}
+%	Consider two points $P=\left(2,12\right)$ and $Q=\left(10,3072\right)$.
+%	\begin{tasks}
+%		\task Find the linear function $g\left(x\right)=a\cdot x+b$ that passes through these points.
+%		\task Find the exponential function $f\left(x\right)=a\cdot b^x$ that passes through these points.
+%		\task Given two points, is there always a linear function passing through these points?
+%		\task Given two points, is there always an exponential function passing through these points?
+%	\end{tasks}
+%\end{exercise}
 %\begin{exercise}
 %	Consider again the function
 %	\begin{equation*}
@@ -132,3 +125,31 @@ Advancing on the $x$ axis by $n$ changes the function value by the \textbf{facto
 %	where $a$ is now unknown.
 %	Suppuse that at time $x=$
 %\end{exercise}
+%The \ce{^{14}C} isotope of carbon has a \textbf{half-live} of 5730 years, that is \textbf{every \ce{^{14}C} atom has a probability of 50\% to decay with the next 5730 years}.
+%Put differently, for any given an amount $a$ of \ce{^{14}C} atoms, we expect that after 5730 years, half of them will have decayed, so that we are left with roughly $\frac{a}{2}$ atoms.
+%After another 5730 years we will be left with half of $\frac{a}{2}$, i.e. with $\frac{a}{4}$.
+%We arrive at the following table.
+%\begin{figure}[ht]
+%	\centering
+%	\begin{tikzpicture}
+%		\matrix[matrix of math nodes,draw, column sep=1em,row sep=.5mm] (mx) {
+%			\textrm{year} & 0 & 5730 & 11460 & 17190 & 22920 & 28650 & 34380 \\
+%			\textrm{atoms} & \phantom{\frac{a}{1}}a\phantom{\frac{a}{1}} & \frac{a}{2} & \frac{a}{2^2} & \frac{a}{2^3} & \frac{a}{2^4} & \frac{a}{2^5} & \frac{a}{2^6} \\
+%		};
+%		\path[->,shorten >=2pt]
+%		\foreach \from/\to in {2/3,3/4,4/5,5/6,6/7,7/8} {
+%			([yshift=2mm]mx-1-\from.north) edge[bend left]
+%			node[above] {$\scriptstyle+5730$} ([yshift=2mm]mx-1-\to.north)
+%			([yshift=-2.5mm]mx-2-\from.south) edge[bend right]
+%			node[below] {$\scriptstyle\cdot\frac{1}{2}$} ([yshift=-2.5mm]mx-2-\to.south)
+%		};
+%		\foreach \x in {2,...,8}{
+%			\draw ([xshift=-1em]mx.north west -| mx-1-\x.west) -- ([xshift=-1em]mx.south west -| mx-1-\x.west);
+%		};
+%		\draw (mx.west) -- (mx.east);
+%	\end{tikzpicture}
+%\end{figure}
+%the number of remaining atoms after $x$ is given by the function
+%\begin{equation*}
+%	f\left(x\right)=a\cdot 2^{-\frac{x}{5730}}
+%\end{equation*}
