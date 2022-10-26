@@ -1,4 +1,4 @@
-\documentclass[14pt,a4paper,oneside]{extreport}
+\documentclass[11pt,a4paper,oneside]{extreport}
 \usepackage[a4paper,total={160mm,250mm}]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -37,20 +37,20 @@
 \pagenumbering{gobble}
 \setlength{\parindent}{0pt}
 
-%\theoremstyle{definition}
-%\newtheorem*{example*}{Example}
-%
+\theoremstyle{definition}
+\newtheorem*{definition*}{Definition}
+
 %\theoremstyle{definition}
 %\newtheorem{example}{Example}
-%
+
 %\theoremstyle{definition}
 %\newtheorem{exercise}{Exercise}
-%
+
 %\theoremstyle{definition}
 %\newtheorem*{solution*}{Solution}
 
 \newcounter{taskcounter}
-\numberwithin{taskcounter}{section}
+%\numberwithin{taskcounter}{section}
 
 \newenvironment{exercise}{%
 	\refstepcounter{taskcounter}
@@ -119,7 +119,7 @@
 %	\input{chapters/introduction}\newpage
 	\input{chapters/rational_exponents}\newpage
 	\input{chapters/exponential_equations}\newpage
-%	\input{chapters/exponential_function}\newpage
+	\input{chapters/exponential_function}\newpage
 
 %	\input{chapters/decay}\newpage
 %	\input{chapters/powers}\newpage
@@ -127,74 +127,6 @@
 %	\input{chapters/exponential_function}\newpage
 %	\input{chapters/logarithm}\newpage
 %	\input{chapters/covid}
-
-%\begin{exercise}
-%	Write as a power of a single rational exponent.
-%	\begin{tasks}(4)
-%		\task $\sqrt[4]{8}\cdot\sqrt[4]{2}$
-%		\task $\dfrac{12^\frac{1}{3}}{12^\frac{1}{4}}$
-%		\task $\left(\sqrt[4]{2}\right)^{10}$
-%		\task $\dfrac{2}{\sqrt[10]{2}}$
-%		\task $4^{-\frac{2}{3}}\cdot 16^\frac{2}{3}$
-%		\task $\dfrac{2^{\frac{3}{4}}}{2}$
-%		\task $\sqrt[4]{2}\cdot\sqrt[8]{2}$
-%		\task $6^{-\frac{5}{2}}\cdot 6^\frac{7}{2}$
-%		\task $\dfrac{128^\frac{1}{3}}{2^\frac{1}{3}}$
-%		\task $\dfrac{\sqrt[3]{2}}{\sqrt[5]{2}}$
-%		\task $\left(a^{\frac{2}{3}}\right)^\frac{3}{4}$
-%		\task $x^{\frac{1}{3}}\cdot x^{\frac{5}{6}}$
-%		\task $\left(\sqrt[4]{2}\right)^{10}$
-%		\task $\sqrt[3]{\dfrac{1}{3}}\cdot\sqrt[3]{\dfrac{1}{9}}$
-%		\task $\frac{x^{\frac{1}{5}}}{x^{\frac{3}{5}}}$
-%		\task $\dfrac{\sqrt[4]{50}}{\sqrt[4]{2}}$
-%	\end{tasks}
-%\end{exercise}
-%\begin{exercise}
-%	Assume that all variables are positive and simplify the following terms.
-%	\begin{tasks}(4)
-%		\task $\sqrt[4]{\frac{16x^5}{81}}$
-%		\task $\left(x^3\cdot y^{-6}\right)^{\frac{1}{3}}$
-%		\task $\left(\frac{x^{\frac{1}{5}}}{x^{\frac{3}{5}}}\right)^{-1}$
-%		\task $\left(x^\frac{3}{4}\cdot y^\frac{1}{8}\cdot z^\frac{5}{6}\right)^\frac{4}{5}$
-%	\end{tasks}
-%\end{exercise}
-
-\begin{manualexercise}{8}
-	All variables are positive. Write as a single rational power.
-	\begin{tasks}(4)
-		\task $\dfrac{1}{\sqrt{x}}$
-		\task $\sqrt[3]{\dfrac{1}{\sqrt{a}}}$
-		\task $\left(\dfrac{1}{27\,x^6}\right)^{\frac{1}{3}}$
-		\task $\dfrac{12^{\frac{1}{3}}}{12^{\frac{2}{4}}}$
-		\task $\dfrac{2^{\frac{3}{4}}}{2}$
-		\task $a^{-\frac{5}{2}}\cdot a^\frac{7}{2}$
-		\task $\sqrt[4]{7}\cdot\sqrt{7}$
-		\task $\sqrt[3]{\dfrac{1}{3}}\cdot\sqrt[3]{\dfrac{1}{9}}$
-	\end{tasks}
-\end{manualexercise}
-\vspace*{8pt}
-\begin{manualexercise}{9}
-	Solve for $x$.
-	\begin{tasks}(4)
-		\task $2^x=2$
-		\task $8^x=\dfrac{1}{4}$
-		\task $9^{x-3}=3$
-		\task $49^x=\dfrac{1}{7}$
-		\task $25^x=\dfrac{1}{5}$
-		\task $\left(\dfrac{1}{3}\right)^{x+2}=9$
-		\task $4^{2x-1}=\frac{1}{2}$
-		\task $\left(\dfrac{1}{2}\right)^{x+1}=32$
-	\end{tasks}
-\end{manualexercise}
-\vspace*{8pt}
-\begin{manualexercise}{10}
-	All variables are positive. Simplify the following terms.
-	\begin{tasks}(4)
-		\task $\sqrt[4]{\dfrac{16x^5}{81}}$
-		\task $\left(x^3\cdot y^{-6}\right)^{\frac{1}{3}}$
-		\task $\left(\dfrac{x^{\frac{1}{5}}}{x^{\frac{3}{5}}}\right)^{-1}$
-		\task $\left(x^\frac{3}{4}\cdot y^\frac{1}{8}\cdot z^\frac{5}{6}\right)^\frac{4}{5}$
-	\end{tasks}
-\end{manualexercise}
+%	\input{chapters/tasks}
 
 \end{document}
